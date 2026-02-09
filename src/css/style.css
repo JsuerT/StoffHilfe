@@ -87,13 +87,76 @@ body {
        *************************************/
         @media screen and (min-width: 1024px) {
             .desktop-menu{
-                display: flex;
-                font-size: 1.2rem;
-                margin:0;
-                padding: 0;
+                .container{
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    padding: 0;
+                }
 
-                li{
-                    margin-right: 1rem;
+                .header.top{ /*nicht sticky*/
+                    background-color: #F1EEDC;
+                    color: #fff;
+                    padding: 2rem;
+                    font-size: 4rem;
+                    border-bottom: 1px solid #9FC089;
+                }
+                .meta-nav{
+                    list-style: none;
+                    margin:0;
+                    padding: 0;
+                    display: flex;
+                    justify-content: flex-end;
+                }
+                .meta-nav li{
+                    margin-left: 1rem;
+                }
+
+                .header-main{
+                    background-color: #F1EEDC;
+                    position: sticky;
+                    top: 0;
+                    z-index: 1000;
+                    box-shadow: 2px 2px 2px #9FC089;
+
+                }
+                .nav-wrapper{
+                    display: flex;
+                    align-items: stretch;
+                    height:80px;
+                }
+                .main-menu{
+                    list-style: none;
+                    margin:0;
+                    padding: 0;
+                    display: flex;
+                    flex-grow:1;
+                }
+                .spenden{
+                    position: relative;
+                }
+                .sub-menu{
+                    display:none;
+                    position: absolute;
+                    top:100%;
+                    left:0;
+                    background-color: #9FC089;
+                    min-width: 220px;
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                }
+                .submenu li a{
+                    color: #fff;
+                    padding: 1rem;
+                    display: block;
+                    border-bottom: 1px solid #9FC089;
+                }
+                .submenu li a:hover{
+                    background-color: #000000;
+                    color: #fff;
+                }
+                .spenden:hover .submenu{
+                    display: block;
                 }
             }
 
