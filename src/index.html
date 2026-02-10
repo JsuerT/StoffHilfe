@@ -7,6 +7,7 @@
 </head>
 <body>
 <header>
+    <!-- MOBILE ANSICHT -->
     <div class="offscreenmenu">
         <ul>
             <li><a>Registration</a></li>
@@ -20,33 +21,37 @@
             <span></span>
             <span></span>
         </div>
-
+    </nav>
         <!--TODO bild noch -->
         <!--<img src="assets/LogoNeu.jpg" alt="Logo" class="logo">-->
 
-        <ul class="desktop-menu">
+    <!-- DESKTOP ANSICHT -->
+        <div class="desktop-menu">
+
             <div class="header-top">
-                <ul class="container"> <!-- container für layout -->
-                    <ul class="meta-nav"> <!-- meta nav = sekundäre nav-->
+                <div class="container">
+                    <ul class="meta-nav">
                         <li><a href="#">Informationen</a></li>
                         <li><a href="#">Kontakt</a></li>
                     </ul>
-                </ul>
+                </div>
             </div>
 
-           <nav class="header-main">
-               <div class="container nav-wrapper">
-                   <li class="spenden">
-                       <a href="#">Spenden</a>
-                       <ul class="sub-menu">
-                           <li><a href="Spenden-Geschäft"Per Geschäftsstelle></a></li>
-                           <li><a href="Spenden-Geschäft"Per Abholung></a></li>
-                       </ul>
-                   </li>
-               </div>
-           </nav>
-        </ul>
-    </nav>
+            <nav class="header-main">
+                <div class="container nav-wrapper">
+                    <ul>
+                        <li class="spenden">
+                            <a href="#">Spenden</a>
+                            <ul class="sub-menu">
+                                <li><a href="Spenden-Geschäft">Per Abgabe</a></li>
+                                <li><a href="Spenden-Abholung">Per Abholung</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+        </div>
 </header>
 
 <main>

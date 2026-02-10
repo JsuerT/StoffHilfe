@@ -4,8 +4,21 @@ body {
     margin: 0;
 
     header {
-        background-color: #F1EEDC;
-        padding: 2.2rem;
+        background-color:#272827;
+
+        nav{
+            padding: 1rem;
+            /*border: 0.3rem solid #ffffff;*/
+            display: flex;
+            background-color: #272827;
+        }
+        /*
+            MOBILE ANSICHT
+        */
+
+        .desktop-menu{
+            display: none;
+        }
 
         .offscreenmenu {
             background-color: #F1EEDC;
@@ -30,24 +43,19 @@ body {
         ul{
             list-style: none;
             font-size: 2rem;
-            color:#966D42; font-family: 'Lato', sans-serif;
+            color:#B9B0A2; font-family: 'Lato', sans-serif;
         }
 
-        nav{
-            padding: 1rem;
-            /*border: 0.3rem solid #ffffff;*/
-            display: flex;
-            background-color: #F1EEDC;
-        }
+
 
         .ham-menu{
-            height: 80px;
-            width: 80px;
+            height: 50px;
+            width: 50px;
             margin-right:auto;
             position: relative;
         }
         .ham-menu span{
-            height: 10px;
+            height: 5px;
             width:100%;
             background-color: #9FC089;
             border-radius: 25px;
@@ -78,98 +86,112 @@ body {
 
         }
 
-        .desktop-menu{
-            display: none;
-        }
-
         /********************************************
             FÜR DESKTOP ANSICHT
        *************************************/
         @media screen and (min-width: 1024px) {
-            .desktop-menu{
-                .container{
-                    max-width: 1200px;
-                    margin: 0 auto;
-                    padding: 0;
-                }
 
-                .header.top{ /*nicht sticky*/
-                    background-color: #F1EEDC;
-                    color: #fff;
-                    padding: 2rem;
-                    font-size: 4rem;
-                    border-bottom: 1px solid #9FC089;
-                }
-                .meta-nav{
-                    list-style: none;
-                    margin:0;
-                    padding: 0;
-                    display: flex;
-                    justify-content: flex-end;
-                }
-                .meta-nav li{
-                    margin-left: 1rem;
-                }
-
-                .header-main{
-                    background-color: #F1EEDC;
-                    position: sticky;
-                    top: 0;
-                    z-index: 1000;
-                    box-shadow: 2px 2px 2px #9FC089;
-
-                }
-                .nav-wrapper{
-                    display: flex;
-                    align-items: stretch;
-                    height:80px;
-                }
-                .main-menu{
-                    list-style: none;
-                    margin:0;
-                    padding: 0;
-                    display: flex;
-                    flex-grow:1;
-                }
-                .spenden{
-                    position: relative;
-                }
-                .sub-menu{
-                    display:none;
-                    position: absolute;
-                    top:100%;
-                    left:0;
-                    background-color: #9FC089;
-                    min-width: 220px;
-                    list-style: none;
-                    padding: 0;
-                    margin: 0;
-                }
-                .submenu li a{
-                    color: #fff;
-                    padding: 1rem;
-                    display: block;
-                    border-bottom: 1px solid #9FC089;
-                }
-                .submenu li a:hover{
-                    background-color: #000000;
-                    color: #fff;
-                }
-                .spenden:hover .submenu{
-                    display: block;
-                }
+            .desktop-menu {
+                display: block;
             }
 
+            .ham-menu, .offscreenmenu, .mobile-nav-toggle {
+                display: none
+            }
 
-            .ham-menu{
+            .container{
+                margin:0 auto;
+                width: 100%;
+            }
+
+            .header-top {
+                background-color: #272827;
+                padding: 0;
+               border-bottom: 0.2rem dotted #9FC089;
+            }
+
+            .meta-nav {
+                list-style: none;
+                display: flex;
+                justify-content: flex-end;
+                margin-right: 2rem;
+                margin-top:0;
+                margin-bottom: 0;
+                padding: 0;
+            }
+
+            .meta-nav li {
+                margin-left: 2rem;
+            }
+
+            .meta-nav a {
+                color: #B9B0A2;
+                text-decoration: none; /*nicht underlined*/
+                font-size: 1.2rem;
+            }
+
+            /* Sticky Navigation */
+            .header-main {
+                position: sticky;
+                top: 0;
+                z-index: 1000; /*bringt element nach vorne*/
+                background-color: #272827;
+            }
+
+            .nav-wrapper {
+                display: flex;
+                justify-content: flex-end;
+                width: 100%;
+            }
+
+            .nav-wrapper ul {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+            }
+
+            .spenden > a {
+                color: #B9B0A2;
+                margin-right: 2rem;
+                text-decoration: none;
+            }
+
+            /* Dropdown Logik */
+            .spenden {
+                position: relative;
+            }
+
+            .sub-menu {
                 display: none;
+                position: absolute;
+                top: 100%;
+                right: 0;
+                background-color: #1A1B1A;
+                /*min-width: 200px;*/
+                list-style: none;
+                padding: 0;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
             }
-            .offscreenmenu{
-                display: none;
+
+            .sub-menu li a {
+                color: #9FC089;
+                font-size: 1.6rem;
+                padding: 12px 15px;
+                display: block;
+                text-decoration: none;
+                border-bottom: 1px solid #9FC089;
             }
-        }
+
+            .sub-menu li a:hover {
+                background-color: #000000;
+            }
+
+            /* Hover-Effekt: Zeige Submenu */
+            .spenden:hover .sub-menu {
+                display: block;
+            }
     }
 
-    main {
+    main {}
  }
 }
