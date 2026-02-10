@@ -1,6 +1,6 @@
 body {
     font-family: 'Lato', sans-serif;
-    background-color: #9FC089;
+    background-color: #121412;
     margin: 0;
 
     header {
@@ -21,19 +21,18 @@ body {
         }
 
         .offscreenmenu {
-            background-color: #F1EEDC;
+            background-color: #000000;
             height: 100vh;
             width: 100%;
-            max-width: 450px;
+            max-width: 350px;
             position: fixed;
-            top: 10rem;
+            top: 5.1rem;
             left: -450px;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
-            align-items: flex-start;
-            text-align: start;
+            justify-content: flex-start;
             font-size: 4rem;
+            line-height: 4rem;
             transition: .3s ease;
         }
         .offscreenmenu.active {
@@ -43,7 +42,9 @@ body {
         ul{
             list-style: none;
             font-size: 2rem;
-            color:#B9B0A2; font-family: 'Lato', sans-serif;
+            align-content: center;
+            color:#9FC089;
+            font-family: 'Lato', sans-serif;
         }
 
 
@@ -192,6 +193,9 @@ body {
             }
     }
 
-    main {}
+    main {
+
+        background-color: #121412;
+    }
  }
 }
