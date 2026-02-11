@@ -11,6 +11,7 @@ body {
             /*border: 0.3rem solid #ffffff;*/
             display: flex;
             background-color: #272827;
+            width:100vh;
         }
         /*
             MOBILE ANSICHT
@@ -86,6 +87,7 @@ body {
             hight:30%;
 
         }
+        /*TODO hier noch tablett version: ham menu mit dem butten spenden rechts, die anderen buttons nicht*/
 
         /********************************************
             FÜR DESKTOP ANSICHT
@@ -100,15 +102,15 @@ body {
                 display: none
             }
 
-            .container{
-                margin:0 auto;
+            .container {
+                margin: 0 auto;
                 width: 100%;
             }
 
             .header-top {
                 background-color: #272827;
                 padding: 0;
-               border-bottom: 0.2rem dotted #9FC089;
+                border-bottom: 0.2rem dotted #9FC089;
             }
 
             .meta-nav {
@@ -116,7 +118,7 @@ body {
                 display: flex;
                 justify-content: flex-end;
                 margin-right: 2rem;
-                margin-top:0;
+                margin-top: 0;
                 margin-bottom: 0;
                 padding: 0;
             }
@@ -157,7 +159,7 @@ body {
                 text-decoration: none;
             }
 
-            /* Dropdown Logik */
+            /* Dropdown */
             .spenden {
                 position: relative;
             }
@@ -171,7 +173,7 @@ body {
                 /*min-width: 200px;*/
                 list-style: none;
                 padding: 0;
-                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             }
 
             .sub-menu li a {
@@ -187,15 +189,26 @@ body {
                 background-color: #000000;
             }
 
-            /* Hover-Effekt: Zeige Submenu */
             .spenden:hover .sub-menu {
                 display: block;
             }
+        }
     }
 
     main {
-
-        background-color: #121412;
+        .bubble{
+            background-color: #272827;
+            color: #B9B0A2;
+            padding: 1.5rem;
+            border-radius: 30px;
+            border-radius: 0.5rem;
+            border: 1px solid #9FC089;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 10px #9FC089;
+        }
+        .bubble-map{
+            padding:0;
+        }
     }
  }
-}
