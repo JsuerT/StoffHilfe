@@ -198,12 +198,28 @@ body {
         .titel{
             font-family: "Oldenburg", serif;
             color: #9FC089;
-            text-shadow: -2px -2px 3px #B9B0A2;
+            text-shadow: -2px -2px 3px #272827;
         }
         .sub-titel{
             font-family: "Oldenburg", serif;
             color: #B9B0A2;
         }
+
+        .abschnittKreise{
+            background-color: #39352A;
+            block-size: 13rem;
+
+            .Icons{
+                padding-top:1rem;
+                width: 6.5rem;
+                height:auto;
+            }
+            .IconText{
+                padding-top:0.5rem;
+                color: #B9B0A2;
+            }
+        }
+
 
         .bubble{
             background-color: #272827;
