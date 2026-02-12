@@ -205,6 +205,7 @@ body {
             color: #B9B0A2;
         }
 
+        /* 1. Abschnitt: Abschnitt Kreise : zeigen Leistungen*/
         .abschnittKreise{
             background-color: #39352A;
             block-size: 13rem;
@@ -214,13 +215,40 @@ body {
                 width: 6.5rem;
                 height:auto;
             }
+
+
             .IconText{
                 padding-top:0.5rem;
                 color: #B9B0A2;
             }
+            @media screen and (min-width: 1024px) {
+                block-size: 25rem;
+                padding: 4rem;
+                .Icons{
+                    width: 12rem;
+                }
+                .IconText{
+                    padding-top:2rem;
+                }
+
+                .Icons:hover{
+                    box-shadow: 0 0 20px #9FC089;
+                    border-radius: 25%;
+                    padding-bottom: 1rem;
+                    padding-left: 1rem;
+                    padding-right: 1rem;
+                }
+                .Icons:hover + .IconText{
+                    color: #9FC089;
+                }
+                .IconText:hover{
+                    color:#9FC089;
+                }
+
+            }
         }
 
-
+/*
         .bubble{
             background-color: #272827;
             color: #B9B0A2;
@@ -235,6 +263,6 @@ body {
 
         .bubble-map{
             padding:0;
-        }
+        }*/
     }
  }
