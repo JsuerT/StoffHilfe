@@ -255,7 +255,7 @@ body {
         /* 2. Abschnitt: WillkommensText */
         .WillkommensText {
             background-color: #5A5C4D;
-            padding: 4rem 1rem;
+            padding: 3rem 1rem;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -315,7 +315,7 @@ body {
 
         /* DesktopAnsicht: 2. Section WillkommensText */
         @media screen and (min-width: 1024px) {
-            .beschreibungMehrInfo{
+            .beschreibungMehrInfo, .beschreibungWenigerInfo {
                 display:none;
             }
             .beschreibungInhalt {
