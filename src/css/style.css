@@ -4,6 +4,7 @@ body {
     margin: 0;
 
     header {
+        /*TODO STICKY HEADER MACHEN UND ÜBERPRÜFEN*/
         background-color:#272827;
 
         nav{
@@ -217,11 +218,12 @@ body {
                 height:auto;
             }
 
-
             .IconText{
                 padding-top:0.5rem;
                 color: #B9B0A2;
             }
+
+           /* DesktopAnsicht: 1.AbschnittKreise*/
             @media screen and (min-width: 1024px) {
                 block-size: 25rem;
                 padding: 4rem;
@@ -230,6 +232,7 @@ body {
                 }
                 .IconText{
                     padding-top:2rem;
+                    font-family: 'Lato', sans-serif;
                 }
 
                 .Icons:hover{
@@ -249,15 +252,87 @@ body {
             }
         }
 
-        /* 2. Abschnitt: kleiner Text was stoffhilfe ist und so*/
-        .WillkommensText{
+        /* 2. Abschnitt: WillkommensText */
+        .WillkommensText {
             background-color: #5A5C4D;
-            block-size: 25rem;
+            padding: 4rem 1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-            .beschreibung{
-                background-color: #9FC089;
-                padding: 1.5rem;
+        .text-kasten {
+            background-color: #292723;
+            color: #B9B0A2;
+            padding: 2.5rem;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        /*mobile*/
+        .beschreibungTitle {
+            font-family: "Oldenburg", serif;
+            color: #9FC089;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .beschreibungInhalt, .beschreibungEnde, .beschreibungWenigerInfo {
+            display: none;
+        }
+
+        .active{ /*es werden alle Informationen angeziegt*/
+            display: block;
+        }
+
+        .hidden{
+            display: none;
+        }
+
+        .beschreibungMehrInfo {
+            color: #B9B0A2;
+            font-family: 'Lato', sans-serif;
+        }
+        .beschreibungWenigerInfos{
+            color: #B9B0A2;
+            font-family: 'Lato', sans-serif;
+        }
+
+
+        .beschreibungInhalt {
+            color: #B9B0A2;
+            font-size: 1.1rem;
+            font-family: 'Lato', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .beschreibungEnde {
+            color: #9FC089;
+            font-size: 1.2rem;
+        }
+
+        /* DesktopAnsicht: 2. Section WillkommensText */
+        @media screen and (min-width: 1024px) {
+            .beschreibungMehrInfo{
+                display:none;
             }
+            .beschreibungInhalt {
+                display: block;
+                color: #B9B0A2;
+                font-size: 1.3rem;
+                font-family: 'Lato', sans-serif;
+                line-height: 1.6;
+                margin: 0;
+            }
+
+            .beschreibungEnde {
+                display: block;
+                color: #9FC089;
+                font-size: 1.2rem;
+            }
+
         }
 /*
         .bubble{
