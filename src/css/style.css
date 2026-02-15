@@ -22,18 +22,18 @@ body {
         }
 
         .offscreenmenu {
-            background-color: #000000;
+            background-color: #121412;
             height: 100vh;
             width: 100%;
-            max-width: 350px;
+            max-width: 250px;
             position: fixed;
             top: 5.1rem;
             left: -450px;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            font-size: 4rem;
-            line-height: 4rem;
+            font-size: 2rem;
+            line-height: 3rem;
             transition: .3s ease;
         }
         .offscreenmenu.active {
@@ -42,7 +42,7 @@ body {
 
         ul{
             list-style: none;
-            font-size: 2rem;
+            font-size: 1.5rem;
             align-content: center;
             color:#9FC089;
             font-family: 'Lato', sans-serif;
@@ -178,7 +178,7 @@ body {
 
             .sub-menu li a {
                 color: #9FC089;
-                font-size: 1.6rem;
+                font-size: 1rem;
                 padding: 12px 15px;
                 display: block;
                 text-decoration: none;
@@ -333,6 +333,44 @@ body {
                 font-size: 1.2rem;
             }
 
+        }
+
+        /*3. Abschnitt: Auswahl Spenden*/
+        .AuswahlSpenden{
+            background-color:#272827;
+            padding: 3rem 1rem;
+            display: flex;
+            justify-content: center;
+        }
+        .SpendenAufruf{
+            color:#9FC089;
+            font-family: "Oldenburg", serif;
+            text-transform: uppercase;
+            text-shadow: -2px -2px 3px #272827;
+            justify-content: center;
+            text-align: center;
+        }
+        .TextAuswahl {
+            color: #B9B0A2;
+            text-align: center;
+        }
+        .IconAuswahl{
+            margin-top:2rem;
+        }
+        .SpendenIcon{
+            width:100%;
+            max-width:150px;
+            height:auto;
+        }
+        button{
+            background:none;
+            padding:0;
+            width:100%;
+            display:flex;
+            justify-content: center;
+            border-radius:25px;
+            overflow:hidden;
+            border:2px solid #9FC089;
         }
 /*
         .bubble{
