@@ -440,6 +440,10 @@ body {
             border-bottom: 0.2rem dotted #9FC089;
         }
 
+        .FrageWas:hover, .FrageWohin:hover, .FrageReal:hover {
+            color: #9FC089;
+        }
+
         .AntwWas, .AntwWohin, .AntwReal {
             justify-content: flex-start;
             color: #9FC089;
@@ -451,21 +455,17 @@ body {
             display: block;
         }
 
-        /*
-                .bubble{
-                    background-color: #272827;
-                    color: #B9B0A2;
-                    padding: 1.5rem;
-                    border-radius: 30px;
-                    border: 1px solid #9FC089;
-                    display: flex;
-                    flex-direction: column;
-                    box-shadow: 0 4px 10px #9FC089;
-                }
 
+        /*5. Abschnitt: Weltkarte*/
 
-                .bubble-map{
-                    padding:0;
-                }*/
+        .Weltkartee {
+            border-radius: 30px;
+            text-align: center;
+            overflow: hidden;
+            width: 100%;
+            height: auto;
+            border: 2px solid #9FC089;
+            box-shadow: 0px 0px 10px #B9B0A2;
+        }
     }
 }
