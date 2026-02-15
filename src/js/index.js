@@ -1,4 +1,4 @@
-//Hamburger Menu: click
+//Hamburger Menu: click HEADER
 const hamMenu = document.querySelector('.ham-menu');
 const offScreenMenu = document.querySelector('.offscreenmenu');
 hamMenu.addEventListener('click', () => {
@@ -26,4 +26,23 @@ beschreibungWenigerInfos.addEventListener('click', () => {
     beschreibungWenigerInfos.classList.toggle('active');
 
     beschreibungMehrInfos.classList.toggle('hidden')
+})
+
+//Index: 4. Section: FAQs antw. anzeigen
+const FrageWas = document.querySelector('.FrageWas');
+const AntwWas = document.querySelector('.AntwWas');
+FrageWas.addEventListener('click', () => {
+    AntwWas.classList.toggle('active');
+})
+
+const FrageWohin = document.querySelector('.FrageWohin');
+const AntwWohin = document.querySelector('.AntwWohin');
+FrageWohin.addEventListener('click', () => {
+    AntwWohin.classList.toggle('active');
+})
+
+const FrageReal = document.querySelector('.FrageReal');
+const AntwReal = document.querySelector('.AntwReal');
+FrageReal.addEventListener('click', () => {
+    AntwReal.classList.toggle('active');
 })

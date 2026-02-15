@@ -5,19 +5,20 @@ body {
 
     header {
         /*TODO STICKY HEADER MACHEN UND ÜBERPRÜFEN*/
-        background-color:#272827;
+        background-color: #272827;
 
-        nav{
+        nav {
             padding: 1rem;
             /*border: 0.3rem solid #ffffff;*/
             display: flex;
             background-color: #272827;
         }
+
         /*
             MOBILE ANSICHT
         */
 
-        .desktop-menu{
+        .desktop-menu {
             display: none;
         }
 
@@ -36,29 +37,30 @@ body {
             line-height: 3rem;
             transition: .3s ease;
         }
+
         .offscreenmenu.active {
             left: 0;
         }
 
-        ul{
+        ul {
             list-style: none;
             font-size: 1.5rem;
             align-content: center;
-            color:#9FC089;
+            color: #9FC089;
             font-family: 'Lato', sans-serif;
         }
 
 
-
-        .ham-menu{
+        .ham-menu {
             height: 50px;
             width: 50px;
-            margin-right:auto;
+            margin-right: auto;
             position: relative;
         }
-        .ham-menu span{
+
+        .ham-menu span {
             height: 5px;
-            width:100%;
+            width: 100%;
             background-color: #9FC089;
             border-radius: 25px;
             position: absolute;
@@ -67,26 +69,35 @@ body {
             transform: translate(-50%, -50%);
             transition: .3s ease;
         }
-        .ham-menu span:nth-child(1) { top: 25%; }
-        .ham-menu span:nth-child(3) { top: 75%; }
+
+        .ham-menu span:nth-child(1) {
+            top: 25%;
+        }
+
+        .ham-menu span:nth-child(3) {
+            top: 75%;
+        }
 
         .ham-menu.active span:nth-child(1) {
             top: 50%;
             transform: translate(-50%, -50%) rotate(45deg);
         }
+
         .ham-menu.active span:nth-child(2) {
             opacity: 0;
         }
+
         .ham-menu.active span:nth-child(3) {
             top: 50%;
             transform: translate(-50%, -50%) rotate(-45deg);
         }
 
-        .logo{
-            width:30%;
-            hight:30%;
+        .logo {
+            width: 30%;
+            hight: 30%;
 
         }
+
         /*TODO hier noch tablett version: ham menu mit dem butten spenden rechts, die anderen buttons nicht*/
 
         /********************************************
@@ -196,63 +207,77 @@ body {
     }
 
     main {
-        .titel{
-            font-family: "Oldenburg", serif;
-            color: #9FC089;
-            text-shadow: -2px -2px 3px #272827;
-        }
-        .sub-titel{
-            font-family: "Oldenburg", serif;
-            color: #B9B0A2;
-        }
+        /*0. Abschnitt: hero */
 
-        /* 1. Abschnitt: Abschnitt Kreise : zeigen Leistungen*/
-        .abschnittKreise{
-            /**TODO hier können so menüs rechts neben den aufploppen wenn man die hovert (was die einzelnen sind) */
-            background-color: #39352A;
-            block-size: 13rem;
-
-            .Icons{
-                padding-top:1rem;
-                width: 6.5rem;
-                height:auto;
+        .hero {
+            .titel {
+                font-family: "Oldenburg", serif;
+                color: #9FC089;
+                text-shadow: -2px -2px 3px #272827;
             }
 
-            .IconText{
-                padding-top:0.5rem;
+            .sub-titel {
+                font-family: "Oldenburg", serif;
                 color: #B9B0A2;
             }
 
-           /* DesktopAnsicht: 1.AbschnittKreise*/
+            background-image: linear-gradient(to bottom, #121412, #24221C);
+            /* background-image: linear-gradient(to bottom, #121412, #39352A);*/
+        }
+
+        /* 1. Abschnitt: Abschnitt Kreise : zeigen Leistungen*/
+
+        .abschnittKreise {
+            /**TODO hier können so menüs rechts neben den aufploppen wenn man die hovert (was die einzelnen sind) */
+            background-color: #39352A;
+            margin-top: -1px;
+            block-size: 13rem;
+
+            .Icons {
+                padding-top: 1rem;
+                width: 6.5rem;
+                height: auto;
+            }
+
+            .IconText {
+                padding-top: 0.5rem;
+                color: #B9B0A2;
+            }
+
+            /* DesktopAnsicht: 1.AbschnittKreise*/
             @media screen and (min-width: 1024px) {
                 block-size: 25rem;
                 padding: 4rem;
-                .Icons{
+                .Icons {
                     width: 12rem;
                 }
-                .IconText{
-                    padding-top:2rem;
+
+                .IconText {
+                    padding-top: 2rem;
                     font-family: 'Lato', sans-serif;
                 }
 
-                .Icons:hover{
+                .Icons:hover {
                     box-shadow: 0 0 20px #9FC089;
                     border-radius: 25%;
                     padding-bottom: 1rem;
                     padding-left: 1rem;
                     padding-right: 1rem;
                 }
-                .Icons:hover + .IconText{
+
+                .Icons:hover + .IconText {
                     color: #9FC089;
                 }
-                .IconText:hover{
-                    color:#9FC089;
+
+                .IconText:hover {
+                    color: #9FC089;
                 }
 
             }
         }
 
         /* 2. Abschnitt: WillkommensText */
+
         .WillkommensText {
             background-color: #5A5C4D;
             padding: 3rem 1rem;
@@ -271,6 +296,7 @@ body {
         }
 
         /*mobile*/
+
         .beschreibungTitle {
             font-family: "Oldenburg", serif;
             color: #9FC089;
@@ -282,11 +308,11 @@ body {
             display: none;
         }
 
-        .active{ /*es werden alle Informationen angeziegt*/
+        .active { /*es werden alle Informationen angeziegt*/
             display: block;
         }
 
-        .hidden{
+        .hidden {
             display: none;
         }
 
@@ -294,7 +320,8 @@ body {
             color: #B9B0A2;
             font-family: 'Lato', sans-serif;
         }
-        .beschreibungWenigerInfos{
+
+        .beschreibungWenigerInfos {
             color: #B9B0A2;
             font-family: 'Lato', sans-serif;
         }
@@ -316,8 +343,9 @@ body {
         /* DesktopAnsicht: 2. Section WillkommensText */
         @media screen and (min-width: 1024px) {
             .beschreibungMehrInfo, .beschreibungWenigerInfo {
-                display:none;
+                display: none;
             }
+
             .beschreibungInhalt {
                 display: block;
                 color: #B9B0A2;
@@ -336,70 +364,108 @@ body {
         }
 
         /*3. Abschnitt: Auswahl Spenden*/
-        .AuswahlSpenden{
-            background-color:#272827;
+
+        .AuswahlSpenden {
+            background-color: #272827;
             padding: 3rem 1rem;
             display: flex;
             justify-content: center;
         }
-        .SpendenAufruf{
-            color:#9FC089;
+
+        .SpendenAufruf {
+            color: #9FC089;
             font-family: "Oldenburg", serif;
             text-transform: uppercase;
             text-shadow: -2px -2px 3px #272827;
             justify-content: center;
             text-align: center;
         }
+
         .TextAuswahl {
             color: #B9B0A2;
             text-align: center;
         }
-        .IconAuswahl{
-            margin-top:2rem;
+
+        .IconAuswahl {
+            margin-top: 2rem;
         }
-        .SpendenIcon{
-            width:100%;
-            height:auto;
+
+        .SpendenIcon {
+            width: 100%;
+            height: auto;
         }
-        button{
-            background:none;
-            padding:0;
-            width:100%;
-            display:flex;
+
+        button {
+            background: none;
+            padding: 0;
+            width: 100%;
+            display: flex;
             justify-content: center;
-            border-radius:25px;
-            overflow:hidden;
-            border:2px solid #9FC089;
-            box-shadow: 0px 0px 20px #B9B0A2;
+            border-radius: 25px;
+            overflow: hidden;
+            border: 2px solid #9FC089;
+            box-shadow: 0px 0px 10px #B9B0A2;
         }
+
         /* DesktopAnsicht: 3. Section Auswahl Spenden*/
         @media screen and (min-width: 1024px) {
 
-            .IconAuswahl{
-                margin-top:2rem;
+            .IconAuswahl {
+                margin-top: 2rem;
             }
 
-            button{
-                width:80%;
-                height:auto;
+            button {
+                width: 80%;
+                height: auto;
             }
         }
 
-/*
-        .bubble{
-            background-color: #272827;
-            color: #B9B0A2;
-            padding: 1.5rem;
-            border-radius: 30px;
-            border: 1px solid #9FC089;
+        /*4. Abschnitt: FAQs*/
+
+        .FAQs {
+            background-color: #0D1A00;
+            padding: 3rem 0rem;
             display: flex;
-            flex-direction: column;
-            box-shadow: 0 4px 10px #9FC089;
         }
 
+        .FAQTitle {
+            justify-content: flex-start;
+            color: #B9B0A2;
+            /*border-bottom: 0.2rem dotted #9FC089;*/
+        }
 
-        .bubble-map{
-            padding:0;
-        }*/
+        .FrageWas, .FrageWohin, .FrageReal {
+            justify-content: flex-start;
+            color: #B9B0A2;
+            border-bottom: 0.2rem dotted #9FC089;
+        }
+
+        .AntwWas, .AntwWohin, .AntwReal {
+            justify-content: flex-start;
+            color: #9FC089;
+            margin-left: 2rem;
+            display: none;
+        }
+
+        .active {
+            display: block;
+        }
+
+        /*
+                .bubble{
+                    background-color: #272827;
+                    color: #B9B0A2;
+                    padding: 1.5rem;
+                    border-radius: 30px;
+                    border: 1px solid #9FC089;
+                    display: flex;
+                    flex-direction: column;
+                    box-shadow: 0 4px 10px #9FC089;
+                }
+
+
+                .bubble-map{
+                    padding:0;
+                }*/
     }
- }
+}
