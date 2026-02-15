@@ -359,7 +359,6 @@ body {
         }
         .SpendenIcon{
             width:100%;
-            max-width:150px;
             height:auto;
         }
         button{
@@ -371,7 +370,21 @@ body {
             border-radius:25px;
             overflow:hidden;
             border:2px solid #9FC089;
+            box-shadow: 0px 0px 20px #B9B0A2;
         }
+        /* DesktopAnsicht: 3. Section Auswahl Spenden*/
+        @media screen and (min-width: 1024px) {
+
+            .IconAuswahl{
+                margin-top:2rem;
+            }
+
+            button{
+                width:80%;
+                height:auto;
+            }
+        }
+
 /*
         .bubble{
             background-color: #272827;
