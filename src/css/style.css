@@ -223,6 +223,8 @@ body {
 
 
 main {
+
+
     /*0. Abschnitt: hero */
 
     .hero {
@@ -483,6 +485,12 @@ main {
         border: 2px solid #9FC089;
         box-shadow: 0px 0px 10px #B9B0A2;
     }
+
+
 }
 
+.footer-custom {
+    background-color: #272827 !important;
+    color: #9FC089 !important;
+}
 
