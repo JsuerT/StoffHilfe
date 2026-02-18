@@ -97,12 +97,14 @@ body {
         }
 
         .logo {
-            width: 30%;
-            hight: 30%;
-
+            width: 50%;
+            hight: 50%;
+            align-self: center;
+            margin-top: 2rem;
+            border-radius: 50%;
+            box-shadow: 0 4px 6px #B9B0A2;
         }
 
-        /*TODO hier noch tablett version: ham menu mit dem butten spenden rechts, die anderen buttons nicht*/
 
         /********************************************
             FÜR DESKTOP ANSICHT
@@ -115,6 +117,10 @@ body {
 
             .ham-menu, .offscreenmenu, .mobile-nav-toggle {
                 display: none
+            }
+
+            .logoDesk {
+
             }
 
             .header-top {
@@ -219,6 +225,44 @@ body {
     .spenden:hover .sub-menu {
         display: block;
     }
+
+    .logo-box-desk {
+        position: absolute;
+        top: 50rem;
+        left: 1rem;
+        width: 6%;
+        background-color: #272827;
+        padding: 15px;
+        border: 2px solid #9FC089;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        border-radius: 15px;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .logoDesk {
+        width: 100%;
+        height: auto;
+        border-radius: 50%;
+        box-shadow: 0 4px 6px #B9B0A2;
+    }
+
+    .hoverLogo {
+        display: none;
+        color: #9FC089;
+        font-family: "Oldenburg", serif;
+        font-size: 1.5rem;
+        padding: 1rem;
+        margin-left: 15px;
+    }
+
+    .logo-box-desk:hover .hoverLogo {
+        display: block;
+    }
+
+
 }
 
 

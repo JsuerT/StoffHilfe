@@ -1,4 +1,4 @@
-//Hamburger Menu: click HEADER
+//Index: Hamburger Menu: click HEADER
 const hamMenu = document.querySelector('.ham-menu');
 const offScreenMenu = document.querySelector('.offscreenmenu');
 hamMenu.addEventListener('click', () => {
