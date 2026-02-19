@@ -119,10 +119,6 @@ body {
                 display: none
             }
 
-            .logoDesk {
-
-            }
-
             .header-top {
                 background-color: #272827;
                 padding: 0;
@@ -228,17 +224,19 @@ body {
 
     .logo-box-desk {
         position: absolute;
-        top: 50rem;
+        top: 3.5rem;
         left: 1rem;
         width: 6%;
+        height: 10rem;
         background-color: #272827;
         padding: 15px;
         border: 2px solid #9FC089;
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
         text-align: center;
-        border-radius: 15px;
+        border-top: none;
+        border-radius: 0 0 15px 15px;
         display: flex;
-        align-items: center;
+        align-items: end;
         justify-content: flex-start;
     }
 
@@ -317,6 +315,13 @@ main {
             .IconText {
                 padding-top: 2rem;
                 font-family: 'Lato', sans-serif;
+            }
+
+            .ErklärungAussortieren, .ErklärungAuswaehlen, .ErklärungAbschicken {
+                position: relative;
+                display: block;
+                width: 40px;
+                height: 40px;
             }
 
             .Icons:hover {
@@ -533,8 +538,29 @@ main {
 
 }
 
-.footer-custom {
-    background-color: #272827 !important;
-    color: #9FC089 !important;
+.footer {
+    background-color: #272827;
 }
+
+.BasisInfos {
+    color: #9FC089;
+    text-align: center;
+    padding-bottom: 1.5rem;
+    padding-top: 1rem;
+    border-bottom: 0.2rem dotted #9FC089;
+}
+
+.ImpressumTitle, .KontakteTitle {
+    color: #9FC089;
+    font-family: "Oldenburg", serif;
+    padding: 2rem;
+    padding-bottom: 1rem;
+}
+
+.Impressum, .Kontakte {
+    background-color: #272827;
+    color: #B9B0A2;
+    padding-left: 2rem;
+}
+
 

@@ -51,7 +51,7 @@
             <div class="container relative">
                 <div class="logo-box-desk">
                     <img alt="Logo Tshit" class="logoDesk" src="assets/Index/Logo_TshitImKartoon.jpg">
-                    <span class="hoverLogo">Stoffhilfe</span>
+                    <span class="hoverLogo">Stoffhilfe</span> <!--span für text: nur css einfluss auf darstellung-->
                 </div>
 
                 <ul class="meta-nav">
@@ -94,14 +94,22 @@
                 <div class="col-4">
                     <img alt="Aussortieren" class="Icons" src="assets/Index/IndexIcons/Icon1_Aussortieren.png">
                     <h5 class="IconText">Aussortieren</h5>
+                    <div class="container relative">
+                        <div class="ErklärungAussortieren">
+                        </div>
+                    </div>
                 </div>
                 <div class="col-4">
                     <img alt="Auswählen" class="Icons" src="assets/Index/IndexIcons/Icon2_Auswaehlen.png">
                     <h5 class="IconText">Ausw&#228;hlen</h5>
+                    <!--     <div class="ErklärungAuswaehlen">
+                         </div>-->
                 </div>
                 <div class="col-4">
                     <img alt="Abschicken" class="Icons" src="assets/Index/IndexIcons/Icon3_Abschicken.png">
                     <h5 class="IconText">Abschicken</h5>
+                    <!-- <div class="ErklärungAbschicken">
+                     </div>-->
                 </div>
 
             </div>
@@ -123,7 +131,7 @@
                         <p class="beschreibungInhalt">
                             Wir sind ein rein fiktives Unternehmen bei welchem Du, dein Stoff und der Mensch am Zielort
                             im Mittelpunkt stehen.
-                            Wir finden, Du solltest die Kontrolle dar&#252;ber haben, wo deine Hilfe ankommt. Deshalb
+                            Wir finden, Du solltest die Kontrolle dar&#252;ber haben, wo Deine Hilfe ankommt. Deshalb
                             haben wir das Spenden so einfach wie m&#246;glich gemacht.
                             Du entscheidest, ob du Deinen Stoff pers&#246;nlich vorbeibringst oder wir ihn bei Dir
                             abholen. W&#228;hle das Krisengebiet aus, das Du unterst&#252;tzen m&#246;chtest.
@@ -229,19 +237,44 @@
 </main>
 
 <footer class="footer-custom footer footer-center p-10 flex flex-col justify-center items-center gap-6">
-    <aside class="flex flex-col items-center">
+    <!--   <aside class="flex flex-col items-center">-->
+    <!-- aside = für inhalte die nicht direkt mir hauptinhalt zu tun haben -->
+    <!--  <p class="font-bold text-center">-->
+    <div class="BasisInfos">
+        STOFFHILFE. UI.
+        <br/>
+        Fallstudie im Modul IPWA01-01
+        <br/>
+        Copyright <span id="current-year"></span> - All Rights Reserved
+    </div>
+    <div class="container">
+        <div class="row align-items-center justify-content-center ">
+            <div class="col-12 col-lg-6">
+                <div class="ImpressumTitle">
+                    Impressum
+                </div>
 
+                <div class="Impressum">
 
-        <p class="font-bold text-center">
-            STOFFHILFE. UI.
-            <br/>
-            Fallstudie im Modul IPWA01-01
-            <br/>
-
-            Copyright <span id="current-year"></span> - All Rights Reserved
-        </p>
-    </aside>
-
+                    Johanna S&uuml;rmann <br br>
+                    Kleiderweg 27 <br br>
+                    272827 Brandgebiet <br br>
+                    Deutschland
+                </div>
+            </div>
+            <div class="col-12 col-lg-6">
+                <div class="KontakteTitle">
+                    Kontakt
+                </div>
+                <div class="Kontakte">
+                    Gesch&auml;ftsf&uuml;hrerIn: Johanna S&uuml;rmann <br br>
+                    Telefon: +49 556556270 <br br>
+                    Email: stoffspende@spendeBitte.de <br br>
+                    &Ouml;ffnungszeiten: 8-22 Uhr (GMT +1)
+                </div>
+            </div>
+        </div>
+    </div>
 </footer>
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
