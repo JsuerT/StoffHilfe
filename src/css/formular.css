@@ -13,9 +13,9 @@ body {
         padding-right: 1rem;
     }
 
-    /*Formular: Krisengebietauswahl*/
+    /*Formular: Generell*/
 
-    .WahlKrisengebiet {
+    .WahlText {
         font-size: 1.3rem;
         text-align: left;
         font-family: "Oldenburg", serif;
@@ -32,5 +32,28 @@ body {
         width: 120px;
         border-radius: 50%;
         align-items: center;
+        margin-bottom: 1.5rem;
+    }
+
+    /*
+
+    .Stoffart:hover, .Stoffart:active {
+        box-shadow: 0 0 20px #9FC089;
+        border-radius: 50%;
+        padding-bottom: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    */
+
+    /*Formular: Absenden*/
+
+    .btnEndeFormular {
+        margin-top: 1rem;
+        padding: 1rem;
+        font: bold 1rem "Oldenburg", serif;
+        color: #B9B0A2;
+        outline: #9FC089 dashed;
+
     }
 }

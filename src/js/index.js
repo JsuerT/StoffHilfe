@@ -46,3 +46,6 @@ const AntwReal = document.querySelector('.AntwReal');
 FrageReal.addEventListener('click', () => {
     AntwReal.classList.toggle('active');
 })
+
+const buttons = document.querySelectorAll('.Stoffart');
+
