@@ -90,17 +90,60 @@
 
     <section class="Formular">
         <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <div class="text-kasten">
-                        <div>
-                            Best&auml;tige das aktuelle Datum <br br>
+            <!--Hintergrund Kasten-->
+            <div class="text-kasten">
+
+                <!--Krisengebiet auswahl -->
+                <div class="WahlKrisengebiet">
+                    Wahl eines Krisengebiets* <br> <br>
+                    <fieldset class="fieldset">
+                        <!--selct von den krisengebieten -->
+                        <select class="select"
+                                style="color: #9FC089; background-color: #272827; border-color: #9FC089; border-radius: 5px;
+                                    ">
+                            <option disabled selected style="color: #B9B0A2;">Keine Pr&auml;ferenz</option>
+                            <option style="color:#B9B0A2">Ostukraine</option>
+                            <option style="color:#B9B0A2">Republik Moldau</option>
+                            <option style="color:#B9B0A2">Syrien</option>
+                            <option style="color:#B9B0A2">Venezuela</option>
+                            <option style="color:#B9B0A2">Balkan</option>
+                            <option style="color:#B9B0A2">Afghanistan</option>
+                            <option style="color:#B9B0A2">S&uuml;dsudan</option>
+                        </select>
+                        <br> <br>
+                    </fieldset>
+                </div>
+
+                <!-- Auswahl Stoffart--->
+                <div class="WahlStoffart">
+                    <div class="row align-items-center py-5">
+                        <div class="col-6 col-lg-4">
+                            <h5 class="IconText">Langarm</h5>
+                            <img alt="Pullover" class="Stoffart" src="assets/Formular/Stoffarten/pullover.png">
                         </div>
-                        Aktuelles Datum <span class="current-year"></span>
+                        <div class="col-6 col-lg-4">
+                            <h5 class="IconText">Winter</h5>
+                            <img alt="Winterkleidung" class="Stoffart" src="assets/Formular/Stoffarten/winter.png">
+                        </div>
+                        <div class="col-6 col-lg-4">
+                            <h5 class="IconText">Kleid</h5>
+                            <img alt="Kleid" class="Stoffart" src="assets/Formular/Stoffarten/kleid.png">
+                        </div>
+                        <div class="col-6 col-lg-4">
+                            <h5 class="IconText">Kurzarm</h5>
+                            <img alt="Kurzarm" class="Stoffart" src="assets/Formular/Stoffarten/tshirt.png">
+                        </div>
+                        <div class="col-6 col-lg-4">
+                            <h5 class="IconText">Hose</h5>
+                            <img alt="Hose" class="Stoffart" src="assets/Formular/Stoffarten/hose1.png">
+                        </div>
                     </div>
+
                 </div>
             </div>
+
         </div>
+
     </section>
 </main>
 
@@ -113,7 +156,7 @@
         <br/>
         Fallstudie im Modul IPWA01-01
         <br/>
-        Copyright <span class="current-year"></span> - All Rights Reserved
+        Copyright <span id="current-year"></span> - All Rights Reserved
     </div>
     <div class="container">
         <div class="row align-items-center justify-content-center ">

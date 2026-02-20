@@ -2,9 +2,35 @@ body {
     font-family: 'Lato', sans-serif;
     background-color: #121412;
     margin: 0;
-}
 
-.Formular {
-    background-color: #5A5C4D;
-    padding: 3rem;
+    /*Formular generell*/
+
+    .Formular {
+        background-color: #5A5C4D;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    /*Formular: Krisengebietauswahl*/
+
+    .WahlKrisengebiet {
+        font-size: 1.3rem;
+        text-align: left;
+        font-family: "Oldenburg", serif;
+
+        border-bottom: 0.2rem dotted #9FC089;
+    }
+
+    /*Formular: Stoffartauswahl*/
+
+    .Stoffart {
+        background-color: #24221C;
+        /* background-color: #0D1A00;
+         background-color: #5A5C4D;*/
+        width: 120px;
+        border-radius: 50%;
+        align-items: center;
+    }
 }
