@@ -73,3 +73,19 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    const agbButton = document.querySelector('.agbButton');
+    const textKasten = document.querySelector('.text-kasten');
+    const agbCloseButton = document.querySelector('.agbs-close');
+    const agbKasten = document.querySelector('.agb-kasten');
+
+    agbButton.addEventListener('click', () => {
+        textKasten.style.display = 'none';
+        agbKasten.style.display = 'block';
+    });
+    agbCloseButton.addEventListener('click', () => {
+        agbKasten.style.display = 'none';
+        textKasten.style.display = 'block';
+    })
+});
