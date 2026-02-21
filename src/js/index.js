@@ -47,5 +47,29 @@ FrageReal.addEventListener('click', () => {
     AntwReal.classList.toggle('active');
 })
 
-const buttons = document.querySelectorAll('.Stoffart');
 
+/////////////////////////////////////////////////
+
+// ====== NEUER CODE FÜR DIE FORMULAR-SEITE (uebergabe.html) ======
+
+document.addEventListener("DOMContentLoaded", () => {
+    // Finde die beiden Divs anhand ihrer IDs
+    const divAbgabe = document.getElementById('abgabe');
+    const divAbholung = document.getElementById('abholung');
+
+    if (divAbgabe && divAbholung) {
+
+        const urlParams = new URLSearchParams(window.location.search);
+        const spendenArt = urlParams.get('art');
+
+        // Logik zum Ein- und Ausblenden
+        if (spendenArt === 'abholung') {
+            divAbgabe.style.display = 'none';
+            divAbholung.style.display = 'block';
+        } else (spendenArt === 'abgabe')
+        {
+            divAbgabe.style.display = 'block';
+            divAbholung.style.display = 'none';
+        }
+    }
+});

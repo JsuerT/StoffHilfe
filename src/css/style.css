@@ -577,4 +577,13 @@ main {
     padding-left: 2rem;
 }
 
+/****************************************************/
+/* alles was nicht in index gehört aber sonst file übergreifend ist */
 
+.backgroundNichtIndex {
+    background-color: #5A5C4D;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
