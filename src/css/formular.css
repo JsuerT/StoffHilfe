@@ -26,9 +26,7 @@ body {
     /*Formular: Stoffartauswahl*/
 
     .Stoffart {
-        background-color: #24221C;
-        /* background-color: #0D1A00;
-         background-color: #5A5C4D;*/
+        background-color: #39352A;
         width: 120px;
         border-radius: 50%;
         align-items: center;
@@ -47,6 +45,14 @@ body {
     */
 
     /*Formular: Absenden*/
+
+    /*Formular: Abholung*/
+
+    .InfotextStandort {
+        font-size: 1rem;
+        font-family: "Oldenburg", serif;
+    }
+
 
     .btnEndeFormular {
         margin-top: 1rem;

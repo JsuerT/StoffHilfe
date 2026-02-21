@@ -16,6 +16,7 @@
 
     <script src="https://cdn.tailwindcss.com?plugins=daisyui"></script>
 
+    <script src="https://unpkg.com/cally" type="module"></script> <!-- für den date input!1 -->
     <meta content="width=device-width, initial-scale=1" name="viewport">
 
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
@@ -83,8 +84,8 @@
     <section class="hero"> <!-- hero= beriech unter dem logo und menü-->
         <div class="container text-center py-5">
             <h1 class="titel">Jetzt Spenden</h1>
-            <h4 class="sub-titel" id="abgabe">Abgabe an einer Gesch&auml;ftsstelle</h4>
-            <h4 class="sub-titel" id="abholung">Abholung</h4>
+            <h4 class="sub-titel">Abgabe an einer Gesch&auml;ftsstelle</h4>
+            <h4 class="sub-titel">Abholung</h4>
         </div>
     </section>
 
@@ -100,16 +101,16 @@
                         <fieldset class="fieldset">
                             <!--selct von den krisengebieten -->
                             <select class="select"
-                                    style="color: #9FC089; background-color: #272827; border-color: #9FC089; border-radius: 5px;
+                                    style="color: #292723; background-color: #B9B0A2; border-color: #292723; border-radius: 5px;
                                     ">
-                                <option disabled selected style="color: #B9B0A2;">Keine Pr&auml;ferenz</option>
-                                <option style="color:#B9B0A2">Ostukraine</option>
-                                <option style="color:#B9B0A2">Republik Moldau</option>
-                                <option style="color:#B9B0A2">Syrien</option>
-                                <option style="color:#B9B0A2">Venezuela</option>
-                                <option style="color:#B9B0A2">Balkan</option>
-                                <option style="color:#B9B0A2">Afghanistan</option>
-                                <option style="color:#B9B0A2">S&uuml;dsudan</option>
+                                <option disabled selected style="color: #39352A;">Keine Pr&auml;ferenz</option>
+                                <option style="color:#39352A">Ostukraine</option>
+                                <option style="color:#39352A">Republik Moldau</option>
+                                <option style="color:#39352A">Syrien</option>
+                                <option style="color:#39352A">Venezuela</option>
+                                <option style="color:#39352A">Balkan</option>
+                                <option style="color:#39352A">Afghanistan</option>
+                                <option style="color:#39352A">S&uuml;dsudan</option>
                             </select>
                             <br> <br>
                         </fieldset>
@@ -147,6 +148,94 @@
 
                 </div>
 
+                <!-- Auswahl Datum -->
+                <div class="WahlDatum">
+                    <div class="WahlText">
+                        Wahl des Datums* <br> <br>
+                        <div class="row">
+                            <div class="col-12 col-md-4">
+                                <!-- TODO mobile version hier überprüfen -->
+                                <input
+                                        class="input datum-input"
+                                        style="color: #292723; background-color: #B9B0A2; border: 1px solid #292723; width: 100%; border-radius: 5px; box-shadow: none; padding: 0 1rem;"
+                                        type="datetime-local"
+                                >
+                            </div>
+                        </div>
+
+                        <!--     <button class="input input-border" id="cally1" popovertarget="cally-popover1"
+                                     style="anchor-name:&#45;&#45;cally1; color: #9FC089; background-color: #272827; border: 1px solid #9FC089; border-radius: 5px; box-shadow: none; width: auto; padding: 0 1rem;">
+                                 W&auml;hle ein Datum
+                             </button>
+
+                             <div class="dropdown bg-base-100 rounded-box shadow-lg" id="cally-popover1" popover
+                                  style="position-anchor:&#45;&#45;cally1">
+                                 &lt;!&ndash; wird oben im head importiert &ndash;&gt;
+                                 <calendar-date class="cally"
+                                                onchange="document.getElementById('cally1').innerText = this.value"
+                                                style="background: #B9B0A2;  ">
+                                     <svg aria-label="Previous" class="fill-current size-4" slot="previous"
+                                          viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                         <path d="M15.75 19.5 8.25 12l7.5-7.5"></path>
+                                     </svg>
+                                     <svg aria-label="Next" class="fill-current size-4" slot="next"
+                                          viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                         <path d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
+                                     </svg>
+                                     <calendar-month></calendar-month>
+                                 </calendar-date>
+                             </div-->
+                        <br> <br>
+                    </div>
+                </div>
+
+                <!--********************************************************-->
+                <!-- nur für die abgabe -->
+                <div class="WahlStandort" id="abgabe">
+                    <div class="WahlText">
+                        Wahl eines Standorts*
+                        <div class="InfotextStandort">
+                            Unsere Standorte befinden sich alle in Deutschland.<br>
+                            Genauere Informationen &uuml;ber die Addresse finden sich im Reiter "Informationen". <br>
+                            <br>
+                        </div>
+                        <fieldset class="fieldset">
+                            <!--selct von den krisengebieten -->
+                            <select class="select"
+                                    style="color: #292723; background-color: #B9B0A2; border-color: #292723; border-radius: 5px;
+                                    ">
+                                <option disabled selected style="color: #39352A;">N&uuml;rnberg</option>
+                                <option style="color:#39352A">Oldenburg</option>
+                                <option style="color:#39352A">L&uuml;neburg</option>
+                                <option style="color:#39352A">Potsdam</option>
+                                <option style="color:#39352A">Saalfeld</option>
+                                <option style="color:#39352A">Koblenz</option>
+                                <option style="color:#39352A">Bayreuth</option>
+                                <option style="color:#39352A">Offenburg</option>
+                            </select>
+                            <br> <br>
+                        </fieldset>
+
+                    </div>
+                </div>
+                <!--********************************************************-->
+                <!-- nur für die abholung-->
+                <div class="WahlAddresse" id="abholung">
+                    <div class="WahlText">
+                        Wahl der Adresse* <br> <br>
+                        <div class="row">
+
+                            <div class="col-12">
+                                <input class="input" placeholder="Type here"
+                                       style="background-color: #B9B0A2; border-color: #B9B0A2; color:#292723; border-radius: 5px;"
+                                       type="text"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!--****************************************************************-->
                 <div align="left" class="Absenden">
                     * notwendig erfolderliche Felder
                     <div class="row align-items-center">
@@ -156,7 +245,10 @@
                             </div>
                         </div>
                         <div class="col-2">
-                            <input checked="checked" class="checkbox" type="checkbox"/>
+                            <input checked="checked"
+                                   class="checkbox"
+                                   style="width: 1.5rem; height: 1.5rem;"
+                                   type="checkbox"/>
                         </div>
 
                         <button class="btnEndeFormular">Weiter</button>
