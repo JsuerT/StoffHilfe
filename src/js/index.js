@@ -53,25 +53,22 @@ FrageReal.addEventListener('click', () => {
 // ====== NEUER CODE FÜR DIE FORMULAR-SEITE (uebergabe.html) ======
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Finde die beiden Divs anhand ihrer IDs
     const divAbgabe = document.getElementById('abgabe');
     const divAbholung = document.getElementById('abholung');
 
-    if (divAbgabe && divAbholung) {
 
-        const urlParams = new URLSearchParams(window.location.search);
-        const spendenArt = urlParams.get('art');
+    const urlParams = new URLSearchParams(window.location.search);
+    const spendenUebergabe = urlParams.get('uebergabe');
 
-        // Logik zum Ein- und Ausblenden
-        if (spendenArt === 'abholung') {
-            divAbgabe.style.display = 'none';
-            divAbholung.style.display = 'block';
-        } else (spendenArt === 'abgabe')
-        {
-            divAbgabe.style.display = 'block';
-            divAbholung.style.display = 'none';
-        }
+    // Logik zum Ein- und Ausblenden
+    if (spendenUebergabe === 'abholung') {
+        divAbgabe.style.display = 'none';
+        divAbholung.style.display = 'block';
+    } else if (spendenUebergabe === 'abgabe') {
+        divAbgabe.style.display = 'block';
+        divAbholung.style.display = 'none';
     }
+
 });
 
 /*document.addEventListener('DOMContentLoaded', () => {
