@@ -26,6 +26,31 @@ body {
         margin-bottom: 1.5rem;
     }
 
+    .stoffart-checkbox {
+        display: none;
+    }
+
+    /* 2. Cursor auf Pointer setzen, damit man sieht, dass es klickbar ist */
+
+    .stoffart-label {
+        cursor: pointer;
+        display: block;
+        transition: transform 0.2s ease;
+    }
+
+    /*so wird es größer wenn ich drüber hover*/
+
+    .stoffart-label:hover {
+        transform: scale(1.05);
+    }
+
+    /* 3. Der "Selected" Effekt: Wenn die Checkbox daneben checked ist... */
+
+    .stoffart-checkbox:checked + .stoffart-label .Stoffart {
+        box-shadow: 0 0 20px #9FC089; /* Dein grüner Glow */
+        border: 2px solid #9FC089; /* Grüner Rand */
+    }
+
     /*
 
     .Stoffart:hover, .Stoffart:active {
@@ -53,6 +78,10 @@ body {
             display: none;
         }*/
 
+    a {
+        text-decoration: none;
+    }
+
     .agbButton {
         background-color: #292723;
         color: red;
@@ -64,9 +93,11 @@ body {
         width: 200px;
         align-items: flex-start;
         text-align: left;
+        text-decoration: none;
     }
 
     .agbs-close {
+        text-decoration: none;
         background-color: #292723;
         color: red;
         border: none;
@@ -80,7 +111,6 @@ body {
     }
 
     .agb-kasten {
-        display: none;
         background-color: #292723;
         color: #B9B0A2;
         padding: 2.5rem;
@@ -94,7 +124,7 @@ body {
         padding: 1rem;
         font: bold 1rem "Oldenburg", serif;
         color: #B9B0A2;
-        outline: #9FC089 dashed;
+        outline: #9FC089;
 
     }
 }

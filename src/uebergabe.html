@@ -42,8 +42,9 @@
     <div class="offscreenmenu">
         <img alt="Logo Tshit" class="logo" src="assets/Index/Logo_TshitImKartoon.jpg">
         <ul>
-            <li><a>Informationen</a></li>
-            <li><a>Kontakt</a></li>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="informationen.html">Informationen</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
             <!--TODO hier noch irgendwas rein was cool fürs offscreenmenu ist -->
         </ul>
     </div>
@@ -57,6 +58,7 @@
                 </div>
 
                 <ul class="meta-nav">
+                    <li><a href="index.html">HOME</a></li>
                     <li><a href="#">Informationen</a></li>
                     <li><a href="#">Kontakt</a></li>
                 </ul>
@@ -123,25 +125,55 @@
                     <div class="WahlText">
                         Wahl der Kleidungsart*
                         <div class="row align-items-center py-5">
-                            <div class="col-6 col-lg-4">
-                                <h5 class="IconText">Langarm</h5>
-                                <img alt="Pullover" class="Stoffart" src="assets/Formular/Stoffarten/pullover.png">
+                            <!-- Langarm -->
+                            <div class="col-6 col-lg-4 text-center">
+                                <input class="stoffart-checkbox" id="type-langarm" name="stoffart[]" type="checkbox"
+                                       value="langarm">
+                                <label class="stoffart-label" for="type-langarm">
+                                    <h5 class="IconText">Langarm</h5>
+                                    <img alt="Pullover" class="Stoffart" src="assets/Formular/Stoffarten/pullover.png">
+                                </label>
                             </div>
+
+                            <!-- Kurzarm -->
                             <div class="col-6 col-lg-4">
-                                <h5 class="IconText">Kurzarm</h5>
-                                <img alt="Kurzarm" class="Stoffart" src="assets/Formular/Stoffarten/tshirt.png">
+                                <input class="stoffart-checkbox" id="type-kurzarm" name="stoffart[]" type="checkbox"
+                                       value="kurzarm">
+                                <label class="stoffart-label" for="type-kurzarm">
+                                    <h5 class="IconText">Kurzarm</h5>
+                                    <img alt="Kurzarm" class="Stoffart" src="assets/Formular/Stoffarten/tshirt.png">
+                                </label>
                             </div>
+
+                            <!-- Hose -->
                             <div class="col-6 col-lg-4">
-                                <h5 class="IconText">Hose</h5>
-                                <img alt="Hose" class="Stoffart" src="assets/Formular/Stoffarten/hose1.png">
+                                <input class="stoffart-checkbox" id="type-hose" name="stoffart[]" type="checkbox"
+                                       value="hose">
+                                <label class="stoffart-label" for="type-hose">
+                                    <h5 class="IconText">Hose</h5>
+                                    <img alt="Hose" class="Stoffart" src="assets/Formular/Stoffarten/hose1.png">
+                                </label>
                             </div>
+
+                            <!-- Kleid -->
                             <div class="col-6 col-lg-4">
-                                <h5 class="IconText">Kleid</h5>
-                                <img alt="Kleid" class="Stoffart" src="assets/Formular/Stoffarten/kleid.png">
+                                <input class="stoffart-checkbox" id="type-kleid" name="stoffart[]" type="checkbox"
+                                       value="kleid">
+                                <label class="stoffart-label" for="type-kleid">
+                                    <h5 class="IconText">Kleid</h5>
+                                    <img alt="Kleid" class="Stoffart" src="assets/Formular/Stoffarten/kleid.png">
+                                </label>
                             </div>
+
+                            <!-- Winter -->
                             <div class="col-6 col-lg-4">
-                                <h5 class="IconText">Winter</h5>
-                                <img alt="Winterkleidung" class="Stoffart" src="assets/Formular/Stoffarten/winter.png">
+                                <input class="stoffart-checkbox" id="type-winter" name="stoffart[]" type="checkbox"
+                                       value="winter">
+                                <label class="stoffart-label" for="type-winter">
+                                    <h5 class="IconText">Winter</h5>
+                                    <img alt="Winterkleidung" class="Stoffart"
+                                         src="assets/Formular/Stoffarten/winter.png">
+                                </label>
                             </div>
                         </div>
                     </div>
@@ -151,14 +183,20 @@
                 <!-- Auswahl Datum -->
                 <div class="WahlDatum">
                     <div class="WahlText">
-                        Wahl des Datums* <br> <br>
-                        <div class="row">
-                            <div class="col-12 col-md-4">
-                                <!-- TODO mobile version hier überprüfen -->
+                        Wahl des Termins* <br> <br>
+                        <div class="row g-2">
+                            <div class="col-12 col-md-6">
                                 <input
                                         class="input datum-input"
-                                        style="color: #292723; background-color: #B9B0A2; border: 1px solid #292723; width: 100%; border-radius: 5px; box-shadow: none; padding: 0 1rem;"
-                                        type="datetime-local"
+                                        style="color: #292723; background-color: #B9B0A2; border: 1px solid #292723; width: 100%; border-radius: 5px; padding: 0 1rem;"
+                                        type="date"
+                                >
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <input
+                                        class="input datum-input"
+                                        style="color: #292723; background-color: #B9B0A2; border: 1px solid #292723; width: 100%; border-radius: 5px; padding: 0 1rem;"
+                                        type="time"
                                 >
                             </div>
                         </div>
@@ -196,7 +234,8 @@
                         Wahl eines Standorts*
                         <div class="InfotextStandort">
                             Unsere Standorte befinden sich alle in Deutschland.<br>
-                            Genauere Informationen &uuml;ber die Addresse finden sich im Reiter "Informationen". <br>
+                            Genauere Informationen &uuml;ber die &Ouml;ffnungszeiten finden sich im Reiter
+                            "Informationen". <br>
                             <br>
                         </div>
                         <fieldset class="fieldset">
@@ -226,8 +265,14 @@
                         <div class="row">
 
                             <div class="col-12">
-                                <input class="input" placeholder="Type here"
-                                       style="background-color: #B9B0A2; border-color: #B9B0A2; color:#292723; border-radius: 5px;"
+                                <input class="input" placeholder="Stra&szlig;e&Hausnummer"
+                                       style="background-color: #B9B0A2; border-color: #B9B0A2; color:#292723; border-radius: 5px; width: 100%;"
+                                       type="text"
+                                />
+                            </div>
+                            <div class="col-12">
+                                <input class="input" placeholder="Postleitzahl"
+                                       style="background-color: #B9B0A2; border-color: #B9B0A2; color:#292723; border-radius: 5px; width: 100%;"
                                        type="text"
                                 />
                             </div>
@@ -238,9 +283,11 @@
                 <!--****************************************************************-->
                 <div align="left" class="Absenden">
                     * notwendig erfolderliche Felder
-                    <button class="agbButton">
-                        Klicke hier f&uuml;r die ABGs
-                    </button>
+                    <a href="agbs.html">
+                        <button class="agbButton" type="button">
+                            Klicke hier f&uuml;r die ABGs
+                        </button>
+                    </a>
                     <div class="row align-items-center">
                         <div class="col-10">
                             <div class="WahlText">
@@ -260,37 +307,37 @@
                 </div>
 
             </div>
-            <!-------- AGBS ------------>
-            <div class="agb-kasten">
-                <div class="beschreibungTitle">
-                    Unsere Allgemeinen Gesch&auml;ftsbedingungen
-                    <br> <br>
-                    Annahmekriterien
-                </div>
-                <div class="beschreibungInhalt">
-                    Die gespendete Kleidung muss in einem ordnungsgem&auml;ssen Zustand sein. Des Weiteren darf keine
-                    Gesundheitsgef&auml;hrdung
-                    durch die Kleidung entstehen.
-                </div>
-                <div class="beschreibungTitle">
-                    Eigentums&uuml;bergang
-                </div>
-                <div class="beschreibungInhalt">
-                    Mit dem Zeitpunkt der &Uuml;bergabe geht das Eigentum an Stoffhilfe &uuml;ber. Es besteht kein R&uuml;ckgabeanspruch.
-                </div>
-                <div class="beschreibungTitle">
-                    Datenschutz
-                </div>
-                <div class="beschreibungInhalt">
-                    Stoffhilfe beh&auml;lt und verwendet alle angegebenen personenbezogenen Daten auf unbestimmte
-                    Zeit.
-                </div>
+            <!--   &lt;!&ndash;&#45;&#45;&#45;&#45;&#45;&#45; AGBS &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;
+               <div class="agb-kasten">
+                   <div class="beschreibungTitle">
+                       Unsere Allgemeinen Gesch&auml;ftsbedingungen
+                       <br> <br>
+                       Annahmekriterien
+                   </div>
+                   <div class="beschreibungInhalt">
+                       Die gespendete Kleidung muss in einem ordnungsgem&auml;ssen Zustand sein. Des Weiteren darf keine
+                       Gesundheitsgef&auml;hrdung
+                       durch die Kleidung entstehen.
+                   </div>
+                   <div class="beschreibungTitle">
+                       Eigentums&uuml;bergang
+                   </div>
+                   <div class="beschreibungInhalt">
+                       Mit dem Zeitpunkt der &Uuml;bergabe geht das Eigentum an Stoffhilfe &uuml;ber. Es besteht kein R&uuml;ckgabeanspruch.
+                   </div>
+                   <div class="beschreibungTitle">
+                       Datenschutz
+                   </div>
+                   <div class="beschreibungInhalt">
+                       Stoffhilfe beh&auml;lt und verwendet alle angegebenen personenbezogenen Daten auf unbestimmte
+                       Zeit.
+                   </div>
 
-                <button class="agbs-close">
-                    Zur&uuml;ck zum Formular
-                </button>
-            </div>
-
+                   <button class="agbs-close">
+                       Zur&uuml;ck zum Formular
+                   </button>
+               </div>
+   -->
         </div>
 
 

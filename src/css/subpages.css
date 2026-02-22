@@ -3,3 +3,9 @@ body {
     background-color: #121412;
     margin: 0;
 }
+
+/* KONTAKT */
+.custom-table, .custom-table th, .custom-table td {
+    background-color: #B9B0A2;
+    color: #292723;
+}

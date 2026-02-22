@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-document.addEventListener('DOMContentLoaded', () => {
+/*document.addEventListener('DOMContentLoaded', () => {
     const agbButton = document.querySelector('.agbButton');
     const textKasten = document.querySelector('.text-kasten');
     const agbCloseButton = document.querySelector('.agbs-close');
@@ -88,4 +88,4 @@ document.addEventListener('DOMContentLoaded', () => {
         agbKasten.style.display = 'none';
         textKasten.style.display = 'block';
     })
-});
+})*/

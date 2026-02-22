@@ -1,4 +1,4 @@
-!DOCTYPE  html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
     <title>Kleiderspende</title>
@@ -16,6 +16,7 @@
 
     <script src="https://cdn.tailwindcss.com?plugins=daisyui"></script>
 
+    <script src="https://unpkg.com/cally" type="module"></script> <!-- für den date input!1 -->
     <meta content="width=device-width, initial-scale=1" name="viewport">
 
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
@@ -24,89 +25,44 @@
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
     <link href="https://fonts.googleapis.com/css2?family=Oldenburg&display=swap" rel="stylesheet">
+    <link href="css/formular.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <link href="css/subpages.css" rel="stylesheet">
 </head>
-
 <body>
-
-<header>
-    <nav>
-        <div class="ham-menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </nav>
-    <!-- MOBILE ANSICHT -->
-    <div class="offscreenmenu">
-        <img alt="Logo Tshit" class="logo" src="assets/Index/Logo_TshitImKartoon.jpg">
-        <ul>
-            <li><a>HOME</a></li>
-            <li><a>Information</a></li>
-        </ul>
-    </div>
-    <!-- DESKTOP ANSICHT -->
-    <div class="desktop-menu">
-        <div class="header-top">
-            <div class="container relative">
-                <div class="logo-box-desk">
-                    <img alt="Logo Tshit" class="logoDesk" src="assets/Index/Logo_TshitImKartoon.jpg">
-                    <span class="hoverLogo">Stoffhilfe</span> <!--span für text: nur css einfluss auf darstellung-->
-                </div>
-
-                <ul class="meta-nav">
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="informationen.html">Information</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</header>
-
-
-<nav class="header-main">
-    <div class="container nav-wrapper">
-        <ul>
-            <li class="spenden">
-                <a href="#">Spenden</a>
-                <ul class="sub-menu">
-                    <li><a href="uebergabe.html?art=abgabe">Per Abgabe</a></li>
-                    <li><a href="uebergabe.html?art=abholung">Per Abholung</a></li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-</nav>
-
 <main>
-    <section class="hero"> <!-- hero= beriech unter dem logo und menü-->
-        <div class="container text-center py-5">
-            <h1 class="titel">Kontakt</h1>
-            <h4 class="sub-titel">Das sind wir</h4>
-        </div>
-    </section>
-
     <section class="backgroundNichtIndex">
         <div class="container">
-            <!--Hintergrund Kasten-->
-            <div class="text-kasten">
-                <div class="KontaktIntro">
-                    <div class="beschreibungInhalt">
-                        Hallo! Wir sind Stoffhilfe.
-                    </div>
+            <div class="agb-kasten">
+                <div class="beschreibungTitle">
+                    Unsere Allgemeinen Gesch&auml;ftsbedingungen
+                    <br> <br>
+                    Annahmekriterien
                 </div>
-                <div class="Ansprechpartner">
-                    <div class="beschreibungTitle">
-                        Ansprechpartner
-                    </div>
-                    <div class="beschreibungInhalt">
-
-                    </div>
-
+                <div class="beschreibungInhalt">
+                    Die gespendete Kleidung muss in einem ordnungsgem&auml;ssen Zustand sein. Des Weiteren darf
+                    keine
+                    Gesundheitsgef&auml;hrdung
+                    durch die Kleidung entstehen.
+                </div>
+                <div class="beschreibungTitle">
+                    Eigentums&uuml;bergang
+                </div>
+                <div class="beschreibungInhalt">
+                    Mit dem Zeitpunkt der &Uuml;bergabe geht das Eigentum an Stoffhilfe &uuml;ber. Es besteht kein R&uuml;ckgabeanspruch.
+                </div>
+                <div class="beschreibungTitle">
+                    Datenschutz
+                </div>
+                <div class="beschreibungInhalt">
+                    Stoffhilfe beh&auml;lt und verwendet alle angegebenen personenbezogenen Daten auf unbestimmte
+                    Zeit.
                 </div>
 
-
+                <a href="uebergabe.html">
+                    <button class="agbs-close">
+                        Zur&uuml;ck zum Formular
+                    </button>
+                </a>
             </div>
         </div>
     </section>
@@ -151,8 +107,5 @@
         </div>
     </div>
 </footer>
-<script>
-    document.getElementById('current-year').textContent = new Date().getFullYear();
-</script>
 </body>
 </html>
