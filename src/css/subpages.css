@@ -4,7 +4,38 @@ body {
     margin: 0;
 }
 
+/* GENERELL */
+.subpagesTextInhalt {
+    color: #B9B0A2;
+    font-size: 1.1rem;
+    font-family: 'Lato', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.subpagesTextTitle {
+    font-family: "Oldenburg", serif;
+    color: #9FC089;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
 /* KONTAKT */
+.Ansprechpartner {
+    align-item: flex-start;
+    text-align: left;
+}
+
+.logoKontakt {
+    max-width: 200px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px #B9B0A2;
+
+
+}
+
+/* INFORMATION */
 .custom-table, .custom-table th, .custom-table td {
     background-color: #B9B0A2;
     color: #292723;

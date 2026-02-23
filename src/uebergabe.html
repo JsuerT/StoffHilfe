@@ -68,7 +68,7 @@
 </header>
 
 
-<nav class="header-main"> <!-- hier muss ich ncoh ändern dass eine option nicht verfügabr ist -->
+<!--<nav class="header-main"> &lt;!&ndash; hier muss ich ncoh ändern dass eine option nicht verfügabr ist &ndash;&gt;
     <div class="container nav-wrapper">
         <ul>
             <li class="spenden">
@@ -80,7 +80,7 @@
             </li>
         </ul>
     </div>
-</nav>
+</nav>-->
 
 <main>
     <section class="hero"> <!-- hero= beriech unter dem logo und menü-->
@@ -259,7 +259,7 @@
                 </div>
                 <!--********************************************************-->
                 <!-- nur für die abholung-->
-                <div class="WahlAddresse" id="abholung">
+                <div class="WahlAdresse" id="abholung">
                     <div class="WahlText">
                         Wahl der Adresse* <br> <br>
                         <div class="row">
@@ -307,37 +307,7 @@
                 </div>
 
             </div>
-            <!--   &lt;!&ndash;&#45;&#45;&#45;&#45;&#45;&#45; AGBS &#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&ndash;&gt;
-               <div class="agb-kasten">
-                   <div class="beschreibungTitle">
-                       Unsere Allgemeinen Gesch&auml;ftsbedingungen
-                       <br> <br>
-                       Annahmekriterien
-                   </div>
-                   <div class="beschreibungInhalt">
-                       Die gespendete Kleidung muss in einem ordnungsgem&auml;ssen Zustand sein. Des Weiteren darf keine
-                       Gesundheitsgef&auml;hrdung
-                       durch die Kleidung entstehen.
-                   </div>
-                   <div class="beschreibungTitle">
-                       Eigentums&uuml;bergang
-                   </div>
-                   <div class="beschreibungInhalt">
-                       Mit dem Zeitpunkt der &Uuml;bergabe geht das Eigentum an Stoffhilfe &uuml;ber. Es besteht kein R&uuml;ckgabeanspruch.
-                   </div>
-                   <div class="beschreibungTitle">
-                       Datenschutz
-                   </div>
-                   <div class="beschreibungInhalt">
-                       Stoffhilfe beh&auml;lt und verwendet alle angegebenen personenbezogenen Daten auf unbestimmte
-                       Zeit.
-                   </div>
 
-                   <button class="agbs-close">
-                       Zur&uuml;ck zum Formular
-                   </button>
-               </div>
-   -->
         </div>
 
 
@@ -386,6 +356,23 @@
 </footer>
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
+</script>
+<script>
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    const uebergabeTyp = urlParams.get('uebergabe');
+
+    const divAbholung = document.querySelector('.WahlAdresse');
+    const divAbgabe = document.querySelector('.WahlStandort');
+
+    if (uebergabeTyp === 'abgabe') {
+        divAbgabe.classList.toggle('active');
+        divAbholung.classList.toggle('hidden');
+    } else if (uebergabeTyp === 'abholung') {
+        divAbgabe.style.display = 'none';
+        divAbholung.style.display = 'block';
+    }
 </script>
 </body>
 </html>
