@@ -5,6 +5,18 @@ body {
 }
 
 /* GENERELL */
+.logoKontakt {
+    max-width: 200px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 6px #B9B0A2;
+}
+
+.kontaktIntro{
+    font-family: 'Lato', sans-serif;
+    color: #B9B0A2;
+}
+
 .subpagesTextInhalt {
     color: #B9B0A2;
     font-size: 1.1rem;
@@ -24,15 +36,6 @@ body {
 .Ansprechpartner {
     align-item: flex-start;
     text-align: left;
-}
-
-.logoKontakt {
-    max-width: 200px;
-    height: auto;
-    border-radius: 50%;
-    box-shadow: 0 4px 6px #B9B0A2;
-
-
 }
 
 /* INFORMATION */
