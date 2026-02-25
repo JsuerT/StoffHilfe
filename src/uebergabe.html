@@ -2,6 +2,8 @@
 <html lang="de">
 <head>
     <title>Kleiderspende</title>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script defer src="js/index.js"></script>
 
     <script>
@@ -30,330 +32,337 @@
 </head>
 
 <body>
-<header>
-    <nav>
-        <div class="ham-menu">
-            <span></span>
-            <span></span>
-            <span></span>
+<div id="app">
+    <header>
+        <nav>
+            <div class="ham-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+        <!-- MOBILE ANSICHT -->
+        <div class="offscreenmenu">
+            <img alt="Logo Tshit" class="logo" src="assets/Index/Logo_TshitImKartoon.jpg">
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="informationen.html">Informationen</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <!--TODO hier noch irgendwas rein was cool fürs offscreenmenu ist -->
+            </ul>
         </div>
-    </nav>
-    <!-- MOBILE ANSICHT -->
-    <div class="offscreenmenu">
-        <img alt="Logo Tshit" class="logo" src="assets/Index/Logo_TshitImKartoon.jpg">
-        <ul>
-            <li><a href="index.html">HOME</a></li>
-            <li><a href="informationen.html">Informationen</a></li>
-            <li><a href="kontakt.html">Kontakt</a></li>
-            <!--TODO hier noch irgendwas rein was cool fürs offscreenmenu ist -->
-        </ul>
-    </div>
-    <!-- DESKTOP ANSICHT -->
-    <div class="desktop-menu">
-        <div class="header-top">
-            <div class="container relative">
-                <div class="logo-box-desk">
-                    <img alt="Logo Tshit" class="logoDesk" src="assets/Index/Logo_TshitImKartoon.jpg">
-                    <span class="hoverLogo">Stoffhilfe</span> <!--span für text: nur css einfluss auf darstellung-->
-                </div>
+        <!-- DESKTOP ANSICHT -->
+        <div class="desktop-menu">
+            <div class="header-top">
+                <div class="container relative">
+                    <div class="logo-box-desk">
+                        <img alt="Logo Tshit" class="logoDesk" src="assets/Index/Logo_TshitImKartoon.jpg">
+                        <span class="hoverLogo">Stoffhilfe</span> <!--span für text: nur css einfluss auf darstellung-->
+                    </div>
 
-                <ul class="meta-nav">
-                    <li><a href="index.html">HOME</a></li>
-                    <li><a href="#">Informationen</a></li>
-                    <li><a href="#">Kontakt</a></li>
-                </ul>
+                    <ul class="meta-nav">
+                        <li><a href="index.html">HOME</a></li>
+                        <li><a href="#">Informationen</a></li>
+                        <li><a href="#">Kontakt</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
 
 
-<!--<nav class="header-main"> &lt;!&ndash; hier muss ich ncoh ändern dass eine option nicht verfügabr ist &ndash;&gt;
-    <div class="container nav-wrapper">
-        <ul>
-            <li class="spenden">
-                <a href="#">Spenden</a>
-                <ul class="sub-menu">
-                    <li><a href="Spenden-Geschäft">Per Abgabe</a></li>
-                    <li><a href="Spenden-Abholung">Per Abholung</a></li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-</nav>-->
-
-<main>
-    <section class="hero"> <!-- hero= beriech unter dem logo und menü-->
-        <div class="container text-center py-5">
-            <h1 class="titel">Jetzt Spenden</h1>
-            <h4 class="sub-titel">Abgabe an einer Gesch&auml;ftsstelle</h4>
-            <h4 class="sub-titel">Abholung</h4>
+    <!--<nav class="header-main"> &lt;!&ndash; hier muss ich ncoh ändern dass eine option nicht verfügabr ist &ndash;&gt;
+        <div class="container nav-wrapper">
+            <ul>
+                <li class="spenden">
+                    <a href="#">Spenden</a>
+                    <ul class="sub-menu">
+                        <li><a href="Spenden-Geschäft">Per Abgabe</a></li>
+                        <li><a href="Spenden-Abholung">Per Abholung</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
-    </section>
+    </nav>-->
 
-    <section class="backgroundNichtIndex">
+    <main>
+        <section class="hero"> <!-- hero= beriech unter dem logo und menü-->
+            <div class="container text-center py-5">
+                <h1 class="titel">Jetzt Spenden</h1>
+                <h4 class="sub-titel">Abgabe an einer Gesch&auml;ftsstelle</h4>
+                <h4 class="sub-titel">Abholung</h4>
+            </div>
+        </section>
+
+        <section class="backgroundNichtIndex">
+            <div class="container">
+                <!--Hintergrund Kasten-->
+                <div class="text-kasten">
+
+                    <!--Krisengebiet auswahl -->
+                    <div class="WahlKrisengebiet">
+                        <div class="WahlText">
+                            Wahl eines Krisengebiets* <br> <br>
+                            <fieldset class="fieldset">
+                                <!--selct von den krisengebieten -->
+                                <!-- hier ist das v model mit drin (vue.js : verbindet input field mit variabel-->
+                                <select class="select"
+                                        style="color: #39352A; background-color: #B9B0A2; border-color: #292723; border-radius: 5px;"
+                                        v-model="krisengebiet">
+                                    <option selected style="color: #39352A;">Keine Pr&auml;ferenz</option>
+                                    <option style="color:#39352A">Ostukraine</option>
+                                    <option style="color:#39352A">Republik Moldau</option>
+                                    <option style="color:#39352A">Syrien</option>
+                                    <option style="color:#39352A">Venezuela</option>
+                                    <option style="color:#39352A">Balkan</option>
+                                    <option style="color:#39352A">Afghanistan</option>
+                                    <option style="color:#39352A">S&uuml;dsudan</option>
+                                </select>
+                                <br> <br>
+                            </fieldset>
+
+                        </div>
+                    </div>
+
+                    <!-- Auswahl Stoffart--->
+                    <div class="WahlStoffart">
+                        <div class="WahlText">
+                            Wahl der Kleidungsart*
+                            <div class="row align-items-center py-5">
+                                <!-- Langarm -->
+                                <div class="col-6 col-lg-4">
+                                    <input class="stoffart-checkbox" id="type-langarm" name="stoffart[]" type="checkbox"
+                                           value="langarm">
+                                    <label class="stoffart-label" for="type-langarm">
+                                        <h5 class="IconText">Langarm</h5>
+                                        <img alt="Pullover" class="Stoffart"
+                                             src="assets/Formular/Stoffarten/pullover.png">
+                                    </label>
+                                </div>
+
+                                <!-- Kurzarm -->
+                                <div class="col-6 col-lg-4">
+                                    <input class="stoffart-checkbox" id="type-kurzarm" name="stoffart[]" type="checkbox"
+                                           value="kurzarm">
+                                    <label class="stoffart-label" for="type-kurzarm">
+                                        <h5 class="IconText">Kurzarm</h5>
+                                        <img alt="Kurzarm" class="Stoffart" src="assets/Formular/Stoffarten/tshirt.png">
+                                    </label>
+                                </div>
+
+                                <!-- Hose -->
+                                <div class="col-6 col-lg-4">
+                                    <input class="stoffart-checkbox" id="type-hose" name="stoffart[]" type="checkbox"
+                                           value="hose">
+                                    <label class="stoffart-label" for="type-hose">
+                                        <h5 class="IconText">Hose</h5>
+                                        <img alt="Hose" class="Stoffart" src="assets/Formular/Stoffarten/hose1.png">
+                                    </label>
+                                </div>
+
+                                <!-- Kleid -->
+                                <div class="col-6 col-lg-4">
+                                    <input class="stoffart-checkbox" id="type-kleid" name="stoffart[]" type="checkbox"
+                                           value="kleid">
+                                    <label class="stoffart-label" for="type-kleid">
+                                        <h5 class="IconText">Kleid</h5>
+                                        <img alt="Kleid" class="Stoffart" src="assets/Formular/Stoffarten/kleid.png">
+                                    </label>
+                                </div>
+
+                                <!-- Winter -->
+                                <div class="col-6 col-lg-4">
+                                    <input class="stoffart-checkbox" id="type-winter" name="stoffart[]" type="checkbox"
+                                           value="winter">
+                                    <label class="stoffart-label" for="type-winter">
+                                        <h5 class="IconText">Winter</h5>
+                                        <img alt="Winterkleidung" class="Stoffart"
+                                             src="assets/Formular/Stoffarten/winter.png">
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Auswahl Datum -->
+                    <div class="WahlDatum">
+                        <div class="WahlText">
+                            Wahl des Termins* <br> <br>
+                            <div class="row g-2">
+                                <div class="col-12 col-md-6">
+                                    <input
+                                            class="input datum-input"
+                                            style="color: #292723; background-color: #B9B0A2; border: 1px solid #292723; width: 100%; border-radius: 5px; padding: 0 1rem;"
+                                            type="date"
+                                            v-model="datum"
+                                    >
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <input
+                                            class="input datum-input"
+                                            style="color: #292723; background-color: #B9B0A2; border: 1px solid #292723; width: 100%; border-radius: 5px; padding: 0 1rem;"
+                                            type="time"
+                                            v-model="uhrzeit"
+                                    >
+                                </div>
+                            </div>
+
+                            <!--     <button class="input input-border" id="cally1" popovertarget="cally-popover1"
+                                         style="anchor-name:&#45;&#45;cally1; color: #9FC089; background-color: #272827; border: 1px solid #9FC089; border-radius: 5px; box-shadow: none; width: auto; padding: 0 1rem;">
+                                     W&auml;hle ein Datum
+                                 </button>
+
+                                 <div class="dropdown bg-base-100 rounded-box shadow-lg" id="cally-popover1" popover
+                                      style="position-anchor:&#45;&#45;cally1">
+                                     &lt;!&ndash; wird oben im head importiert &ndash;&gt;
+                                     <calendar-date class="cally"
+                                                    onchange="document.getElementById('cally1').innerText = this.value"
+                                                    style="background: #B9B0A2;  ">
+                                         <svg aria-label="Previous" class="fill-current size-4" slot="previous"
+                                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                             <path d="M15.75 19.5 8.25 12l7.5-7.5"></path>
+                                         </svg>
+                                         <svg aria-label="Next" class="fill-current size-4" slot="next"
+                                              viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                             <path d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
+                                         </svg>
+                                         <calendar-month></calendar-month>
+                                     </calendar-date>
+                                 </div-->
+                            <br> <br>
+                        </div>
+                    </div>
+
+                    <!--********************************************************-->
+                    <!-- nur für die abgabe -->
+                    <div class="WahlStandort" id="abgabe">
+                        <div class="WahlText">
+                            Wahl eines Standorts*
+                            <div class="InfotextStandort">
+                                Unsere Standorte befinden sich alle in Deutschland.<br>
+                                Genauere Informationen &uuml;ber die &Ouml;ffnungszeiten finden sich im Reiter
+                                "Informationen". <br>
+                                <br>
+                            </div>
+                            <fieldset class="fieldset">
+                                <!--selct von den krisengebieten -->
+                                <select class="select" style="color: #292723; background-color: #B9B0A2; border-color: #292723; border-radius: 5px;
+                                    "
+                                        v-model="standort">
+                                    <option disabled selected style="color: #39352A;">N&uuml;rnberg</option>
+                                    <option style="color:#39352A">Oldenburg</option>
+                                    <option style="color:#39352A">L&uuml;neburg</option>
+                                    <option style="color:#39352A">Potsdam</option>
+                                    <option style="color:#39352A">Saalfeld</option>
+                                    <option style="color:#39352A">Koblenz</option>
+                                    <option style="color:#39352A">Bayreuth</option>
+                                    <option style="color:#39352A">Offenburg</option>
+                                </select>
+                                <br> <br>
+                            </fieldset>
+
+                        </div>
+                    </div>
+                    <!--********************************************************-->
+                    <!-- nur für die abholung-->
+                    <div class="WahlAdresse" id="abholung">
+                        <div class="WahlText">
+                            Wahl der Adresse* <br> <br>
+                            <div class="row">
+
+                                <div class="col-12">
+                                    <input class="input" placeholder="Stra&szlig;e&Hausnummer"
+                                           style="background-color: #B9B0A2; border-color: #B9B0A2; color:#292723; border-radius: 5px; width: 100%;"
+                                           type="text"
+                                           v-model="strasse"
+                                    />
+                                </div>
+                                <div class="col-12">
+                                    <input class="input" placeholder="Postleitzahl"
+                                           style="background-color: #B9B0A2; border-color: #B9B0A2; color:#292723; border-radius: 5px; width: 100%;"
+                                           type="text"
+                                           v-model="plz"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--****************************************************************-->
+                    <div align="left" class="Absenden">
+                        * notwendig erfolderliche Felder
+                        <a href="agbs.html">
+                            <button class="agbButton" type="button">
+                                Klicke hier f&uuml;r die ABGs
+                            </button>
+                        </a>
+                        <div class="row align-items-center">
+                            <div class="col-10">
+                                <div class="WahlText">
+                                    Best&auml;tigung der AGB
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <input checked="checked"
+                                       class="checkbox"
+                                       style="width: 1.5rem; height: 1.5rem;"
+                                       type="checkbox"/>
+                            </div>
+
+                            <button @click="geheZuBestaetigung" class="btnEndeFormular" type="button">Weiter</button>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+    </main>
+
+    <footer class="footer-custom footer footer-center p-10 flex flex-col justify-center items-center gap-6">
+        <!--   <aside class="flex flex-col items-center">-->
+        <!-- aside = für inhalte die nicht direkt mir hauptinhalt zu tun haben -->
+        <!--  <p class="font-bold text-center">-->
+        <div class="BasisInfos">
+            STOFFHILFE. UI.
+            <br/>
+            Fallstudie im Modul IPWA01-01
+            <br/>
+            Copyright <span id="current-year"></span> - All Rights Reserved
+        </div>
         <div class="container">
-            <!--Hintergrund Kasten-->
-            <div class="text-kasten">
-
-                <!--Krisengebiet auswahl -->
-                <div class="WahlKrisengebiet">
-                    <div class="WahlText">
-                        Wahl eines Krisengebiets* <br> <br>
-                        <fieldset class="fieldset">
-                            <!--selct von den krisengebieten -->
-                            <select class="select"
-                                    style="color: #292723; background-color: #B9B0A2; border-color: #292723; border-radius: 5px;
-                                    ">
-                                <option disabled selected style="color: #39352A;">Keine Pr&auml;ferenz</option>
-                                <option style="color:#39352A">Ostukraine</option>
-                                <option style="color:#39352A">Republik Moldau</option>
-                                <option style="color:#39352A">Syrien</option>
-                                <option style="color:#39352A">Venezuela</option>
-                                <option style="color:#39352A">Balkan</option>
-                                <option style="color:#39352A">Afghanistan</option>
-                                <option style="color:#39352A">S&uuml;dsudan</option>
-                            </select>
-                            <br> <br>
-                        </fieldset>
-
-                    </div>
-                </div>
-
-                <!-- Auswahl Stoffart--->
-                <div class="WahlStoffart">
-                    <div class="WahlText">
-                        Wahl der Kleidungsart*
-                        <div class="row align-items-center py-5">
-                            <!-- Langarm -->
-                            <div class="col-6 col-lg-4 text-center">
-                                <input class="stoffart-checkbox" id="type-langarm" name="stoffart[]" type="checkbox"
-                                       value="langarm">
-                                <label class="stoffart-label" for="type-langarm">
-                                    <h5 class="IconText">Langarm</h5>
-                                    <img alt="Pullover" class="Stoffart" src="assets/Formular/Stoffarten/pullover.png">
-                                </label>
-                            </div>
-
-                            <!-- Kurzarm -->
-                            <div class="col-6 col-lg-4">
-                                <input class="stoffart-checkbox" id="type-kurzarm" name="stoffart[]" type="checkbox"
-                                       value="kurzarm">
-                                <label class="stoffart-label" for="type-kurzarm">
-                                    <h5 class="IconText">Kurzarm</h5>
-                                    <img alt="Kurzarm" class="Stoffart" src="assets/Formular/Stoffarten/tshirt.png">
-                                </label>
-                            </div>
-
-                            <!-- Hose -->
-                            <div class="col-6 col-lg-4">
-                                <input class="stoffart-checkbox" id="type-hose" name="stoffart[]" type="checkbox"
-                                       value="hose">
-                                <label class="stoffart-label" for="type-hose">
-                                    <h5 class="IconText">Hose</h5>
-                                    <img alt="Hose" class="Stoffart" src="assets/Formular/Stoffarten/hose1.png">
-                                </label>
-                            </div>
-
-                            <!-- Kleid -->
-                            <div class="col-6 col-lg-4">
-                                <input class="stoffart-checkbox" id="type-kleid" name="stoffart[]" type="checkbox"
-                                       value="kleid">
-                                <label class="stoffart-label" for="type-kleid">
-                                    <h5 class="IconText">Kleid</h5>
-                                    <img alt="Kleid" class="Stoffart" src="assets/Formular/Stoffarten/kleid.png">
-                                </label>
-                            </div>
-
-                            <!-- Winter -->
-                            <div class="col-6 col-lg-4">
-                                <input class="stoffart-checkbox" id="type-winter" name="stoffart[]" type="checkbox"
-                                       value="winter">
-                                <label class="stoffart-label" for="type-winter">
-                                    <h5 class="IconText">Winter</h5>
-                                    <img alt="Winterkleidung" class="Stoffart"
-                                         src="assets/Formular/Stoffarten/winter.png">
-                                </label>
-                            </div>
-                        </div>
+            <div class="row align-items-center justify-content-center ">
+                <div class="col-12 col-lg-6">
+                    <div class="ImpressumTitle">
+                        Impressum
                     </div>
 
-                </div>
+                    <div class="Impressum">
 
-                <!-- Auswahl Datum -->
-                <div class="WahlDatum">
-                    <div class="WahlText">
-                        Wahl des Termins* <br> <br>
-                        <div class="row g-2">
-                            <div class="col-12 col-md-6">
-                                <input
-                                        class="input datum-input"
-                                        style="color: #292723; background-color: #B9B0A2; border: 1px solid #292723; width: 100%; border-radius: 5px; padding: 0 1rem;"
-                                        type="date"
-                                >
-                            </div>
-                            <div class="col-12 col-md-6">
-                                <input
-                                        class="input datum-input"
-                                        style="color: #292723; background-color: #B9B0A2; border: 1px solid #292723; width: 100%; border-radius: 5px; padding: 0 1rem;"
-                                        type="time"
-                                >
-                            </div>
-                        </div>
-
-                        <!--     <button class="input input-border" id="cally1" popovertarget="cally-popover1"
-                                     style="anchor-name:&#45;&#45;cally1; color: #9FC089; background-color: #272827; border: 1px solid #9FC089; border-radius: 5px; box-shadow: none; width: auto; padding: 0 1rem;">
-                                 W&auml;hle ein Datum
-                             </button>
-
-                             <div class="dropdown bg-base-100 rounded-box shadow-lg" id="cally-popover1" popover
-                                  style="position-anchor:&#45;&#45;cally1">
-                                 &lt;!&ndash; wird oben im head importiert &ndash;&gt;
-                                 <calendar-date class="cally"
-                                                onchange="document.getElementById('cally1').innerText = this.value"
-                                                style="background: #B9B0A2;  ">
-                                     <svg aria-label="Previous" class="fill-current size-4" slot="previous"
-                                          viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                         <path d="M15.75 19.5 8.25 12l7.5-7.5"></path>
-                                     </svg>
-                                     <svg aria-label="Next" class="fill-current size-4" slot="next"
-                                          viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                         <path d="m8.25 4.5 7.5 7.5-7.5 7.5"></path>
-                                     </svg>
-                                     <calendar-month></calendar-month>
-                                 </calendar-date>
-                             </div-->
-                        <br> <br>
+                        Johanna S&uuml;rmann <br>
+                        Kleiderweg 27 <br>
+                        272827 Brandgebiet <br>
+                        Deutschland
                     </div>
                 </div>
-
-                <!--********************************************************-->
-                <!-- nur für die abgabe -->
-                <div class="WahlStandort" id="abgabe">
-                    <div class="WahlText">
-                        Wahl eines Standorts*
-                        <div class="InfotextStandort">
-                            Unsere Standorte befinden sich alle in Deutschland.<br>
-                            Genauere Informationen &uuml;ber die &Ouml;ffnungszeiten finden sich im Reiter
-                            "Informationen". <br>
-                            <br>
-                        </div>
-                        <fieldset class="fieldset">
-                            <!--selct von den krisengebieten -->
-                            <select class="select"
-                                    style="color: #292723; background-color: #B9B0A2; border-color: #292723; border-radius: 5px;
-                                    ">
-                                <option disabled selected style="color: #39352A;">N&uuml;rnberg</option>
-                                <option style="color:#39352A">Oldenburg</option>
-                                <option style="color:#39352A">L&uuml;neburg</option>
-                                <option style="color:#39352A">Potsdam</option>
-                                <option style="color:#39352A">Saalfeld</option>
-                                <option style="color:#39352A">Koblenz</option>
-                                <option style="color:#39352A">Bayreuth</option>
-                                <option style="color:#39352A">Offenburg</option>
-                            </select>
-                            <br> <br>
-                        </fieldset>
-
+                <div class="col-12 col-lg-6">
+                    <div class="KontakteTitle">
+                        Kontakt
                     </div>
-                </div>
-                <!--********************************************************-->
-                <!-- nur für die abholung-->
-                <div class="WahlAdresse" id="abholung">
-                    <div class="WahlText">
-                        Wahl der Adresse* <br> <br>
-                        <div class="row">
-
-                            <div class="col-12">
-                                <input class="input" placeholder="Stra&szlig;e&Hausnummer"
-                                       style="background-color: #B9B0A2; border-color: #B9B0A2; color:#292723; border-radius: 5px; width: 100%;"
-                                       type="text"
-                                />
-                            </div>
-                            <div class="col-12">
-                                <input class="input" placeholder="Postleitzahl"
-                                       style="background-color: #B9B0A2; border-color: #B9B0A2; color:#292723; border-radius: 5px; width: 100%;"
-                                       type="text"
-                                />
-                            </div>
-                        </div>
+                    <div class="Kontakte">
+                        Gesch&auml;ftsf&uuml;hrerIn: Johanna S&uuml;rmann <br>
+                        Telefon: +49 556556270 <br>
+                        Email: stoffhilfe@spendeBitte.de <br>
+                        &Ouml;ffnungszeiten: 8-22 Uhr (GMT +1)
                     </div>
-                </div>
-
-                <!--****************************************************************-->
-                <div align="left" class="Absenden">
-                    * notwendig erfolderliche Felder
-                    <a href="agbs.html">
-                        <button class="agbButton" type="button">
-                            Klicke hier f&uuml;r die ABGs
-                        </button>
-                    </a>
-                    <div class="row align-items-center">
-                        <div class="col-10">
-                            <div class="WahlText">
-                                Best&auml;tigung der AGB
-                            </div>
-                        </div>
-                        <div class="col-2">
-                            <input checked="checked"
-                                   class="checkbox"
-                                   style="width: 1.5rem; height: 1.5rem;"
-                                   type="checkbox"/>
-                        </div>
-
-                        <button class="btnEndeFormular">Weiter</button>
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-    </section>
-</main>
-
-<footer class="footer-custom footer footer-center p-10 flex flex-col justify-center items-center gap-6">
-    <!--   <aside class="flex flex-col items-center">-->
-    <!-- aside = für inhalte die nicht direkt mir hauptinhalt zu tun haben -->
-    <!--  <p class="font-bold text-center">-->
-    <div class="BasisInfos">
-        STOFFHILFE. UI.
-        <br/>
-        Fallstudie im Modul IPWA01-01
-        <br/>
-        Copyright <span id="current-year"></span> - All Rights Reserved
-    </div>
-    <div class="container">
-        <div class="row align-items-center justify-content-center ">
-            <div class="col-12 col-lg-6">
-                <div class="ImpressumTitle">
-                    Impressum
-                </div>
-
-                <div class="Impressum">
-
-                    Johanna S&uuml;rmann <br>
-                    Kleiderweg 27 <br>
-                    272827 Brandgebiet <br>
-                    Deutschland
-                </div>
-            </div>
-            <div class="col-12 col-lg-6">
-                <div class="KontakteTitle">
-                    Kontakt
-                </div>
-                <div class="Kontakte">
-                    Gesch&auml;ftsf&uuml;hrerIn: Johanna S&uuml;rmann <br>
-                    Telefon: +49 556556270 <br>
-                    Email: stoffhilfe@spendeBitte.de <br>
-                    &Ouml;ffnungszeiten: 8-22 Uhr (GMT +1)
                 </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
+</div>
 <script>
     document.getElementById('current-year').textContent = new Date().getFullYear();
 </script>
@@ -373,6 +382,46 @@
         divAbgabe.style.display = 'none';
         divAbholung.style.display = 'block';
     }
+</script>
+
+<script>
+    const {createApp, ref} = Vue;
+
+    createApp({
+        setup() { //das hier ist noch doppelt, das kann noch weg
+            const krisengebiet = ref("");
+            const datum = ref("");
+            const uhrzeit = ref("");
+            const standort = ref("");
+            const strasse = ref("");
+            const plz = ref("");
+
+            const geheZuBestaetigung = () => {
+                const params = new URLSearchParams(window.location.search);
+                const typ = params.get('uebergabe'); // 'abgabe' oder 'abholung'
+
+                localStorage.setItem('uebergabeTyp', typ);
+                localStorage.setItem('gewaehltesGebiet', krisengebiet.value);
+                localStorage.setItem('gewaehltesDatum', datum.value);
+                localStorage.setItem('gewaehlteUhrzeit', uhrzeit.value);
+
+                if (typ === 'abgabe') {
+                    localStorage.setItem('standort', standort.value);
+                } else {
+                    localStorage.setItem('strasse', strasse.value);
+                    localStorage.setItem('plz', plz.value);
+                }
+
+                window.location.href = 'bestaetigung.html';
+            };
+
+            return {
+                krisengebiet, datum, uhrzeit,
+                standort, strasse, plz,
+                geheZuBestaetigung
+            }
+        }
+    }).mount('#app');
 </script>
 </body>
 </html>

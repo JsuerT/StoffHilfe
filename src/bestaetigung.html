@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Bestätigung - Stoffhilfe</title>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=daisyui"></script>
+    <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+</head>
+<body class="bg-[#B9B0A2]">
+
+<div class="container py-10" id="app">
+    <div class="card bg-base-100 shadow-xl p-10 text-center">
+        <h1 class="text-3xl font-bold mb-5">Vielen Dank für deine Spende!</h1>
+
+        <div class="space-y-4 text-left max-w-md mx-auto">
+            <p class="text-lg">Deine Kleidung geht an das Krisengebiet:</p>
+            <p class="text-xl font-bold text-primary">{{ krisengebiet }}</p>
+
+            <hr>
+
+            <p><strong>Termin:</strong> {{ datum }} um {{ uhrzeit }} Uhr</p>
+        </div>
+        <div class="space-y-4 text-left max-w-md mx-auto">
+            <hr>
+
+            <div v-if="uebergabeTyp === 'abgabe'">
+                <p><strong>Art:</strong> Selbstabgabe</p>
+                <p><strong>Standort:</strong> {{ standort }}</p>
+            </div>
+
+            <div v-if="uebergabeTyp === 'abholung'">
+                <p><strong>Art:</strong> Abholung</p>
+                <p><strong>Adresse:</strong> {{ strasse }}, {{ plz }}</p>
+            </div>
+        </div>
+
+        <div class="mt-10">
+            <a class="btn btn-outline" href="index.html">Zurück zum Start</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    const {createApp, ref} = Vue;
+
+    createApp({
+        setup() {
+            const krisengebiet = ref(localStorage.getItem('gewaehltesGebiet') || 'Nicht angegeben');
+            const datum = ref(localStorage.getItem('datum') || 'Kein Datum');
+            const uhrzeit = ref(localStorage.getItem('uhrzeit') || 'Keine Zeit');
+
+            return {
+                uebergabeTyp: ref(localStorage.getItem('uebergabeTyp')),
+                krisengebiet: ref(localStorage.getItem('gewaehltesGebiet') || 'Nicht angegeben'),
+                datum: ref(localStorage.getItem('gewaehltesDatum') || 'Kein Datum'),
+                uhrzeit: ref(localStorage.getItem('gewaehlteUhrzeit') || 'Keine Zeit'),
+                standort: ref(localStorage.getItem('standort') || ''),
+                strasse: ref(localStorage.getItem('strasse') || ''),
+                plz: ref(localStorage.getItem('plz') || '')
+            }
+        }
+    }).mount('#app');
+</script>
+</body>
+</html>
