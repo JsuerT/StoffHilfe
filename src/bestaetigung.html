@@ -77,10 +77,19 @@
                                 </div>
                             </div>
 
-                            <div class="mt-5 text-center">
-                                <a class="btnEndeFormular d-inline-block no-underline" href="index.html">
-                                    Zurück zum Start
-                                </a>
+
+                            <div class="row g-3 text-start mt-4">
+                                <div class="col-12 col-md-6 ">
+                                    <a class="btnEndeFormular d-inline-block no-underline" href="#"
+                                       onclick="geheZurueck()">
+                                        Abbrechen
+                                    </a>
+                                </div>
+                                <div class="col-12 col-md-6 ">
+                                    <a class="btnEndeFormular d-inline-block no-underline" href="index.html">
+                                        Best&auml;tigen
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -111,6 +120,13 @@
             }
         }
     }).mount('#app');
+
+
+    function geheZurueck() {
+        const typ = localStorage.getItem('uebergabeTyp') || 'abgabe';
+        window.location.href = 'uebergabe.html?uebergabe=' + typ;
+    }
 </script>
+
 </body>
 </html>

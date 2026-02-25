@@ -60,7 +60,7 @@
                 </div>
 
                 <a href="uebergabe.html">
-                    <button class="agbs-close">
+                    <button class="agbs-close" onclick="geheZurueck()">
                         Zur&uuml;ck zum Formular
                     </button>
                 </a>
@@ -108,5 +108,11 @@
         </div>
     </div>
 </footer>
+<script>
+    function geheZurueck() {
+        const typ = localStorage.getItem('uebergabeTyp') || 'abgabe';
+        window.location.href = 'uebergabe.html?uebergabe=' + typ;
+    }
+</script>
 </body>
 </html>

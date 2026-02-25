@@ -290,12 +290,10 @@
 
                     <!--****************************************************************-->
                     <div align="left" class="Absenden">
-                        * notwendig erfolderliche Felder
-                        <a href="agbs.html">
-                            <button class="agbButton" type="button">
-                                Klicke hier f&uuml;r die ABGs
-                            </button>
-                        </a>
+                        * notwendig erforderliche Felder
+                        <button @click="geheZuAgbs" class="agbButton" type="button">
+                            Klicke hier f&uuml;r die ABGs
+                        </button>
                         <div class="row align-items-center">
                             <div class="col-10">
                                 <div class="WahlText">
@@ -384,42 +382,61 @@
 </script>
 
 <script>
-    const {createApp, ref} = Vue;
+    const {createApp, ref, onMounted} = Vue;
 
     createApp({
-        setup() { //das hier ist noch doppelt, das kann noch weg
-            const krisengebiet = ref("");
-            const datum = ref("");
-            const uhrzeit = ref("");
-            const standort = ref("");
-            const strasse = ref("");
-            const plz = ref("");
-            const stoffarten = ref([]);
+        setup() {
+            const krisengebiet = ref(localStorage.getItem('temp_krisengebiet') || "Keine Präferenz");
+            const datum = ref(localStorage.getItem('temp_datum') || "");
+            const uhrzeit = ref(localStorage.getItem('temp_uhrzeit') || "");
+            const standort = ref(localStorage.getItem('temp_standort') || "");
+            const strasse = ref(localStorage.getItem('temp_strasse') || "");
+            const plz = ref(localStorage.getItem('temp_plz') || "");
+
+            const gespeicherteStoffarten = localStorage.getItem('temp_stoffarten');
+            const stoffarten = ref(gespeicherteStoffarten ? JSON.parse(gespeicherteStoffarten) : []);
+
+            const speichereAllesZwischen = () => {
+                const params = new URLSearchParams(window.location.search);
+                const typ = params.get('uebergabe') || 'abgabe';
+
+                localStorage.setItem('uebergabeTyp', typ); // Wichtig für den Rückweg
+                localStorage.setItem('temp_krisengebiet', krisengebiet.value);
+                localStorage.setItem('temp_datum', datum.value);
+                localStorage.setItem('temp_uhrzeit', uhrzeit.value);
+                localStorage.setItem('temp_stoffarten', JSON.stringify(stoffarten.value));
+                localStorage.setItem('temp_standort', standort.value);
+                localStorage.setItem('temp_strasse', strasse.value);
+                localStorage.setItem('temp_plz', plz.value);
+            };
+
+            const geheZuAgbs = () => {
+                speichereAllesZwischen();
+                window.location.href = 'agbs.html';
+            };
 
             const geheZuBestaetigung = () => {
-                const params = new URLSearchParams(window.location.search);
-                const typ = params.get('uebergabe'); // 'abgabe' oder 'abholung'
+                if (krisengebiet.value === "" || datum.value === "" || uhrzeit.value === "") {
+                    alert("Es sind nicht alle Informationen angegeben!");
+                    return;
+                }
 
-                localStorage.setItem('uebergabeTyp', typ);
+                speichereAllesZwischen();
+
                 localStorage.setItem('gewaehltesGebiet', krisengebiet.value);
                 localStorage.setItem('gewaehltesDatum', datum.value);
                 localStorage.setItem('gewaehlteUhrzeit', uhrzeit.value);
                 localStorage.setItem('stoffarten', JSON.stringify(stoffarten.value));
-
-                if (typ === 'abgabe') {
-                    localStorage.setItem('standort', standort.value);
-                } else {
-                    localStorage.setItem('strasse', strasse.value);
-                    localStorage.setItem('plz', plz.value);
-                }
+                localStorage.setItem('standort', standort.value);
+                localStorage.setItem('strasse', strasse.value);
+                localStorage.setItem('plz', plz.value);
 
                 window.location.href = 'bestaetigung.html';
             };
 
             return {
-                krisengebiet, datum, uhrzeit,
-                standort, strasse, plz, stoffarten,
-                geheZuBestaetigung
+                krisengebiet, datum, uhrzeit, standort, strasse, plz, stoffarten,
+                geheZuAgbs, geheZuBestaetigung
             }
         }
     }).mount('#app');
