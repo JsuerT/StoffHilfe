@@ -132,7 +132,7 @@
                                 <!-- Langarm -->
                                 <div class="col-6 col-lg-4">
                                     <input class="stoffart-checkbox" id="type-langarm" name="stoffart[]" type="checkbox"
-                                           value="langarm">
+                                           v-model="stoffarten" value="langarm">
                                     <label class="stoffart-label" for="type-langarm">
                                         <h5 class="IconText">Langarm</h5>
                                         <img alt="Pullover" class="Stoffart"
@@ -143,7 +143,7 @@
                                 <!-- Kurzarm -->
                                 <div class="col-6 col-lg-4">
                                     <input class="stoffart-checkbox" id="type-kurzarm" name="stoffart[]" type="checkbox"
-                                           value="kurzarm">
+                                           v-model="stoffarten" value="kurzarm">
                                     <label class="stoffart-label" for="type-kurzarm">
                                         <h5 class="IconText">Kurzarm</h5>
                                         <img alt="Kurzarm" class="Stoffart" src="assets/Formular/Stoffarten/tshirt.png">
@@ -153,7 +153,7 @@
                                 <!-- Hose -->
                                 <div class="col-6 col-lg-4">
                                     <input class="stoffart-checkbox" id="type-hose" name="stoffart[]" type="checkbox"
-                                           value="hose">
+                                           v-model="stoffarten" value="hose">
                                     <label class="stoffart-label" for="type-hose">
                                         <h5 class="IconText">Hose</h5>
                                         <img alt="Hose" class="Stoffart" src="assets/Formular/Stoffarten/hose1.png">
@@ -163,7 +163,7 @@
                                 <!-- Kleid -->
                                 <div class="col-6 col-lg-4">
                                     <input class="stoffart-checkbox" id="type-kleid" name="stoffart[]" type="checkbox"
-                                           value="kleid">
+                                           v-model="stoffarten" value="kleid">
                                     <label class="stoffart-label" for="type-kleid">
                                         <h5 class="IconText">Kleid</h5>
                                         <img alt="Kleid" class="Stoffart" src="assets/Formular/Stoffarten/kleid.png">
@@ -173,7 +173,7 @@
                                 <!-- Winter -->
                                 <div class="col-6 col-lg-4">
                                     <input class="stoffart-checkbox" id="type-winter" name="stoffart[]" type="checkbox"
-                                           value="winter">
+                                           v-model="stoffarten" value="winter">
                                     <label class="stoffart-label" for="type-winter">
                                         <h5 class="IconText">Winter</h5>
                                         <img alt="Winterkleidung" class="Stoffart"
@@ -395,6 +395,7 @@
             const standort = ref("");
             const strasse = ref("");
             const plz = ref("");
+            const stoffarten = ref([]);
 
             const geheZuBestaetigung = () => {
                 const params = new URLSearchParams(window.location.search);
@@ -404,6 +405,7 @@
                 localStorage.setItem('gewaehltesGebiet', krisengebiet.value);
                 localStorage.setItem('gewaehltesDatum', datum.value);
                 localStorage.setItem('gewaehlteUhrzeit', uhrzeit.value);
+                localStorage.setItem('stoffarten', JSON.stringify(stoffarten.value));
 
                 if (typ === 'abgabe') {
                     localStorage.setItem('standort', standort.value);
@@ -417,7 +419,7 @@
 
             return {
                 krisengebiet, datum, uhrzeit,
-                standort, strasse, plz,
+                standort, strasse, plz, stoffarten,
                 geheZuBestaetigung
             }
         }

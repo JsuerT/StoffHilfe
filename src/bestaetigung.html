@@ -36,7 +36,14 @@
                 <p><strong>Adresse:</strong> {{ strasse }}, {{ plz }}</p>
             </div>
         </div>
+        <p><strong>Gewählte Kleidungsstücke:</strong></p>
+        <ul class="list-disc ml-5 mb-4">
+            <li :key="item" class="capitalize" v-for="item in stoffarten">
+                {{ item }}
+            </li>
+        </ul>
 
+        <p class="italic text-gray-500" v-if="stoffarten.length === 0">Keine Kleidung ausgewählt</p>
         <div class="mt-10">
             <a class="btn btn-outline" href="index.html">Zurück zum Start</a>
         </div>
@@ -51,6 +58,8 @@
             const krisengebiet = ref(localStorage.getItem('gewaehltesGebiet') || 'Nicht angegeben');
             const datum = ref(localStorage.getItem('datum') || 'Kein Datum');
             const uhrzeit = ref(localStorage.getItem('uhrzeit') || 'Keine Zeit');
+            const gespeicherteStoffarten = localStorage.getItem('stoffarten');
+            const stoffartenListe = gespeicherteStoffarten ? JSON.parse(gespeicherteStoffarten) : [];
 
             return {
                 uebergabeTyp: ref(localStorage.getItem('uebergabeTyp')),
@@ -59,7 +68,8 @@
                 uhrzeit: ref(localStorage.getItem('gewaehlteUhrzeit') || 'Keine Zeit'),
                 standort: ref(localStorage.getItem('standort') || ''),
                 strasse: ref(localStorage.getItem('strasse') || ''),
-                plz: ref(localStorage.getItem('plz') || '')
+                plz: ref(localStorage.getItem('plz') || ''),
+                stoffarten: ref(stoffartenListe)
             }
         }
     }).mount('#app');
