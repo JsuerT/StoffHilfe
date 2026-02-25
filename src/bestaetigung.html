@@ -8,65 +8,103 @@
     <script src="https://cdn.tailwindcss.com?plugins=daisyui"></script>
     <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
           rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com" rel="preconnect">
+    <link crossorigin href="https://fonts.gstatic.com" rel="preconnect">
+    <link href="https://fonts.googleapis.com/css2?family=Oldenburg&display=swap" rel="stylesheet">
+
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/subpages.css" rel="stylesheet">
+    <link href="css/formular.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            blocklist: ['container'],
+            corePlugins: {preflight: false}
+        }
+    </script>
 </head>
-<body class="bg-[#B9B0A2]">
+<body>
 
-<div class="container py-10" id="app">
-    <div class="card bg-base-100 shadow-xl p-10 text-center">
-        <h1 class="text-3xl font-bold mb-5">Vielen Dank für deine Spende!</h1>
-
-        <div class="space-y-4 text-left max-w-md mx-auto">
-            <p class="text-lg">Deine Kleidung geht an das Krisengebiet:</p>
-            <p class="text-xl font-bold text-primary">{{ krisengebiet }}</p>
-
-            <hr>
-
-            <p><strong>Termin:</strong> {{ datum }} um {{ uhrzeit }} Uhr</p>
-        </div>
-        <div class="space-y-4 text-left max-w-md mx-auto">
-            <hr>
-
-            <div v-if="uebergabeTyp === 'abgabe'">
-                <p><strong>Art:</strong> Selbstabgabe</p>
-                <p><strong>Standort:</strong> {{ standort }}</p>
+<div id="app">
+    <main>
+        <section class="hero">
+            <div class="container text-center py-5">
+                <h1 class="titel">Vielen Dank für Deine Spende!</h1>
+                <h4 class="sub-titel">Gemeinsames Strahlen durch Deinen Stoff</h4>
             </div>
+        </section>
 
-            <div v-if="uebergabeTyp === 'abholung'">
-                <p><strong>Art:</strong> Abholung</p>
-                <p><strong>Adresse:</strong> {{ strasse }}, {{ plz }}</p>
+        <section class="backgroundNichtIndex">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-8">
+                        <div class="text-kasten">
+                            <div class="subpagesTextTitle">
+                                Zusammenfassung Deiner Daten
+                            </div>
+
+                            <div class="row g-3 text-start mt-4">
+                                <div class="col-12 col-md-6">
+                                    <p class="subpagesTextInhalt"><strong>Krisengebiet:</strong></p>
+                                    <p class="subpagesTextInhalt text-primary">{{ krisengebiet }}</p>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <p class="subpagesTextInhalt"><strong>Termin:</strong></p>
+                                    <p class="subpagesTextInhalt">{{ datum }} um {{ uhrzeit }} Uhr</p>
+                                </div>
+
+                                <div class="col-12 border-top pt-3 mt-3">
+                                    <div v-if="uebergabeTyp === 'abgabe'">
+                                        <p class="subpagesTextInhalt"><strong>Art:</strong> Selbstabgabe</p>
+                                        <p class="subpagesTextInhalt"><strong>Standort:</strong> {{ standort }}</p>
+                                    </div>
+                                    <div v-if="uebergabeTyp === 'abholung'">
+                                        <p class="subpagesTextInhalt"><strong>Art:</strong> Abholung von Zuhause</p>
+                                        <p class="subpagesTextInhalt"><strong>Adresse:</strong> {{ strasse }}, {{ plz }}
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="col-12 border-top pt-3 mt-3">
+                                    <p class="subpagesTextInhalt"><strong>Gewählte Kleidungsstücke:</strong></p>
+                                    <ul class="subpagesTextInhalt list-disc ml-5 capitalize">
+                                        <li :key="item" v-for="item in stoffarten">{{ item }}</li>
+                                    </ul>
+                                    <p class="subpagesTextInhalt italic opacity-50" v-if="stoffarten.length === 0">
+                                        Keine Kleidung ausgewählt
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="mt-5 text-center">
+                                <a class="btnEndeFormular d-inline-block no-underline" href="index.html">
+                                    Zurück zum Start
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <p><strong>Gewählte Kleidungsstücke:</strong></p>
-        <ul class="list-disc ml-5 mb-4">
-            <li :key="item" class="capitalize" v-for="item in stoffarten">
-                {{ item }}
-            </li>
-        </ul>
-
-        <p class="italic text-gray-500" v-if="stoffarten.length === 0">Keine Kleidung ausgewählt</p>
-        <div class="mt-10">
-            <a class="btn btn-outline" href="index.html">Zurück zum Start</a>
-        </div>
-    </div>
+        </section>
+    </main>
 </div>
-
 <script>
     const {createApp, ref} = Vue;
 
     createApp({
         setup() {
-            const krisengebiet = ref(localStorage.getItem('gewaehltesGebiet') || 'Nicht angegeben');
-            const datum = ref(localStorage.getItem('datum') || 'Kein Datum');
-            const uhrzeit = ref(localStorage.getItem('uhrzeit') || 'Keine Zeit');
+            // Wir holen die Liste der Stoffarten
             const gespeicherteStoffarten = localStorage.getItem('stoffarten');
             const stoffartenListe = gespeicherteStoffarten ? JSON.parse(gespeicherteStoffarten) : [];
 
             return {
+                // Wir nutzen hier wieder die Keys, die wir in der uebergabe.html festgelegt haben
                 uebergabeTyp: ref(localStorage.getItem('uebergabeTyp')),
                 krisengebiet: ref(localStorage.getItem('gewaehltesGebiet') || 'Nicht angegeben'),
                 datum: ref(localStorage.getItem('gewaehltesDatum') || 'Kein Datum'),
                 uhrzeit: ref(localStorage.getItem('gewaehlteUhrzeit') || 'Keine Zeit'),
-                standort: ref(localStorage.getItem('standort') || ''),
+                standort: ref(localStorage.getItem('standort') || 'Nicht gewählt'),
                 strasse: ref(localStorage.getItem('strasse') || ''),
                 plz: ref(localStorage.getItem('plz') || ''),
                 stoffarten: ref(stoffartenListe)

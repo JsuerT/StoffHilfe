@@ -304,6 +304,10 @@ main {
             color: #B9B0A2;
         }
 
+        .IconLangText {
+            display: none;
+        }
+
         /* DesktopAnsicht: 1.AbschnittKreise*/
         @media screen and (min-width: 1024px) {
             block-size: 25rem;
