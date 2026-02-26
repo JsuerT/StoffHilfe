@@ -47,7 +47,7 @@
                             <div class="row g-3 text-start mt-4">
                                 <div class="col-12 col-md-6">
                                     <p class="subpagesTextInhalt"><strong>Krisengebiet:</strong></p>
-                                    <p class="subpagesTextInhalt text-primary">{{ krisengebiet }}</p>
+                                    <p class="subpagesTextInhalt ">{{ krisengebiet }}</p>
                                 </div>
                                 <div class="col-12 col-md-6">
                                     <p class="subpagesTextInhalt"><strong>Termin:</strong></p>
@@ -103,12 +103,10 @@
 
     createApp({
         setup() {
-            // Wir holen die Liste der Stoffarten
             const gespeicherteStoffarten = localStorage.getItem('stoffarten');
             const stoffartenListe = gespeicherteStoffarten ? JSON.parse(gespeicherteStoffarten) : [];
 
             return {
-                // Wir nutzen hier wieder die Keys, die wir in der uebergabe.html festgelegt haben
                 uebergabeTyp: ref(localStorage.getItem('uebergabeTyp')),
                 krisengebiet: ref(localStorage.getItem('gewaehltesGebiet') || 'Nicht angegeben'),
                 datum: ref(localStorage.getItem('gewaehltesDatum') || 'Kein Datum'),

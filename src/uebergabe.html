@@ -382,7 +382,7 @@
 </script>
 
 <script>
-    const {createApp, ref, onMounted} = Vue;
+    const {createApp, ref} = Vue;
 
     createApp({
         setup() {
@@ -400,7 +400,7 @@
                 const params = new URLSearchParams(window.location.search);
                 const typ = params.get('uebergabe') || 'abgabe';
 
-                localStorage.setItem('uebergabeTyp', typ); // Wichtig für den Rückweg
+                localStorage.setItem('uebergabeTyp', typ);
                 localStorage.setItem('temp_krisengebiet', krisengebiet.value);
                 localStorage.setItem('temp_datum', datum.value);
                 localStorage.setItem('temp_uhrzeit', uhrzeit.value);
@@ -419,6 +419,30 @@
                 if (krisengebiet.value === "" || datum.value === "" || uhrzeit.value === "") {
                     alert("Es sind nicht alle Informationen angegeben!");
                     return;
+                }
+
+                const params = new URLSearchParams(window.location.search);
+                const typ = params.get('uebergabe');
+
+                if (typ === 'abholung') {
+                    /* substring start und ende deswegen nicht 0 und 1 */
+                    const plzStart = plz.value.substring(0, 2);
+
+                    if (plzStart !== "26" && plzStart !== "90" && plzStart !== "21" && plzStart !== "14" && plzStart !== "07" && plzStart !== "56" && plzStart !== "95" && plzStart !== "77") {
+                        alert("Deine Abholaddr. befindet sich in keinem von uns abdeckten Bereich :(");
+                        return;
+                        /*    DAS KANN MAN NOCH IN NE LISTE ÄNDERN; SO WIE JETZT IST HÄSSLICH
+                        Nürnberg: 90
+                        Oldenburg: 26
+                        Lüneburg: 21
+                        Potsdam: 14
+                        Saalfeld: 07
+                        Koblenz 56
+                        Bayreuth: 95
+                        Offenburg 77
+
+                         */
+                    }
                 }
 
                 speichereAllesZwischen();
