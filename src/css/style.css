@@ -226,7 +226,7 @@ body {
 
     .logo-box-desk {
         position: absolute;
-        top: 3.5rem;
+        top: 3rem;
         left: 1rem;
         width: 6%;
         height: 10rem;
@@ -258,9 +258,10 @@ body {
         margin-left: 15px;
     }
 
-    .logo-box-desk:hover .hoverLogo {
-        display: block;
-    }
+    /*
+        .logo-box-desk:hover .hoverLogo {
+            display: block;
+        }*/
 
 
 }
@@ -312,7 +313,7 @@ main {
 
         /* DesktopAnsicht: 1.AbschnittKreise*/
         @media screen and (min-width: 1024px) {
-            block-size: 25rem;
+            block-size: 30rem;
             padding: 4rem;
             .Icons {
                 width: 12rem;
@@ -470,7 +471,8 @@ main {
 
     .TextAuswahl {
         color: #B9B0A2;
-        text-align: center;
+        text-align: left;
+        text-decoration: underline;
     }
 
     .IconAuswahl {
@@ -481,6 +483,7 @@ main {
         width: 100%;
         height: auto;
     }
+
 
     button {
         background: none;
@@ -583,9 +586,15 @@ main {
     padding-left: 2rem;
 }
 
+.FooterEnde {
+    padding-bottom: 2rem;
+    padding-bottom: 4rem;
+    margin-top: 2rem;
+    border-top: 0.2rem dotted #9FC089;
+}
+
 /****************************************************/
 /* alles was nicht in index gehört aber sonst file übergreifend ist */
-
 .backgroundNichtIndex {
     background-color: #5A5C4D;
     padding-top: 3rem;
