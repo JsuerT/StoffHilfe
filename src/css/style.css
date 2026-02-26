@@ -31,7 +31,7 @@ body {
             width: 100%;
             max-width: 250px;
             position: fixed;
-            top: 4.1rem;
+            top: 6rem;
             left: -450px;
             display: flex;
             flex-direction: column;
@@ -39,17 +39,19 @@ body {
             font-size: 2rem;
             line-height: 3rem;
             transition: .3s ease;
+
         }
 
         .offscreenmenu.active {
             left: 0;
         }
 
-        ul {
+        .offscreenText a {
             list-style: none;
             margin-top: 1rem;
             font-size: 1.5rem;
             align-content: center;
+            text-decoration: none;
             color: #B9B0A2;
             font-family: 'Lato', sans-serif;
         }
